@@ -1,6 +1,6 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
-use IEEE.STD_LOGIC_SIGNED.ALL;
+use IEEE.STD_LOGIC_UNSIGNED.ALL;
 
 entity FIR is
     Generic ( N : integer := 12;
@@ -73,7 +73,7 @@ begin
     accumulate : process(clk)
     begin
         if rising_edge(clk) then
-            if rst = '1' then 
+            if rst = '1' or done = '1' then 
                 acc1 <= (others => '0');
                 acc2 <= (others => '0');
             elsif calc = '1' then
@@ -88,13 +88,13 @@ begin
         end if;
     end process;
     
-    addr11 <= reg(0)(bit_idx) & reg(1)(bit_idx) & reg(2)(bit_idx);
-    addr12 <= reg(0)(bit_idx+1) & reg(1)(bit_idx+1) & reg(2)(bit_idx+1);
-    addr13 <= reg(0)(bit_idx+2) & reg(1)(bit_idx+2) & reg(2)(bit_idx+2);
+    addr11 <= reg(2)(bit_idx) & reg(1)(bit_idx) & reg(0)(bit_idx);
+    addr12 <= reg(2)(bit_idx+1) & reg(1)(bit_idx+1) & reg(0)(bit_idx+1);
+    addr13 <= reg(2)(bit_idx+2) & reg(1)(bit_idx+2) & reg(0)(bit_idx+2);
     
-    addr21 <= reg(3)(bit_idx) & reg(4)(bit_idx) & reg(5)(bit_idx);
-    addr22 <= reg(3)(bit_idx+1) & reg(4)(bit_idx+1) & reg(5)(bit_idx+1);
-    addr23 <= reg(3)(bit_idx+2) & reg(4)(bit_idx+2) & reg(5)(bit_idx+2);
+    addr21 <= reg(5)(bit_idx) & reg(4)(bit_idx) & reg(3)(bit_idx);
+    addr22 <= reg(5)(bit_idx+1) & reg(4)(bit_idx+1) & reg(3)(bit_idx+1);
+    addr23 <= reg(5)(bit_idx+2) & reg(4)(bit_idx+2) & reg(3)(bit_idx+2);
     
     y <= (others => '0') when rst = '1' else
          acc1 + acc2 when done = '1';

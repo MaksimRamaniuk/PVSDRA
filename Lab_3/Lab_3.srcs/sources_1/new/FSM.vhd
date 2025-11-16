@@ -24,33 +24,33 @@ begin
                 load <= '0';
                 calc <= '0';
                 state <= IDLE;
-            end if;
-            
-            case state is 
-                when IDLE =>
-                    ready <= '0';
-                    if start = '1' then
-                        load <= '1';
-                        state <= SHIFT;
-                    end if;
-                    
-                when SHIFT =>
-                    load <= '0';
-                    calc <= '1';
-                    state <= CALCULATE;
-                    
-                when CALCULATE =>
-                    if bit_idx >= N-3 then
-                        calc <= '0';
-                        state <= DONE;
-                    else 
+            else
+                case state is 
+                    when IDLE =>
+                        ready <= '0';
+                        if start = '1' then
+                            load <= '1';
+                            state <= SHIFT;
+                        end if;
+                        
+                    when SHIFT =>
+                        load <= '0';
+                        calc <= '1';
                         state <= CALCULATE;
-                    end if;
-                    
-                when DONE =>
-                    ready <= '1';
-                    state <= IDLE;
-            end case;
+                        
+                    when CALCULATE =>
+                        if bit_idx >= N-3 then
+                            calc <= '0';
+                            state <= DONE;
+                        else 
+                            state <= CALCULATE;
+                        end if;
+                        
+                    when DONE =>
+                        ready <= '1';
+                        state <= IDLE;
+                end case;
+            end if;
         end if;
     end process;
 end Behavioral;
