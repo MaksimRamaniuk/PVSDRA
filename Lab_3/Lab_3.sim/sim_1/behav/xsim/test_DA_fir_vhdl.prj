@@ -1,0 +1,9 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../Lab_3.srcs/sources_1/new/ROM.vhd" \
+"../../../../../../../../Анастасия/Downloads/Telegram Desktop/rom.vhd" \
+"../../../../../../../../Анастасия/Downloads/Telegram Desktop/fir_da.vhd" \
+"../../../../../../../../Анастасия/Downloads/Telegram Desktop/da_tb.vhd" \
+
+# Do not sort compile order
+nosort

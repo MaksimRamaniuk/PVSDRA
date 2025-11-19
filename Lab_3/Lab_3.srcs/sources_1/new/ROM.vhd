@@ -16,21 +16,21 @@ type memory is array(0 to 7) of signed(N-1 downto 0);
 
 constant rom1 : memory := (
     to_signed(0, N), -- 0
-    to_signed(21, N), -- 0.0102
-    to_signed(241, N), -- 0.1177
-    to_signed(262, N), -- 0.1279
-    to_signed(762, N), -- 0.3721
-    to_signed(783, N), -- 0.3823
-    to_signed(1003, N), -- 0.4898
+    to_signed(40, N), -- 0.0102
+    to_signed(271, N), -- 0.1177
+    to_signed(312, N), -- 0.1279
+    to_signed(712, N), -- 0.3721
+    to_signed(753, N), -- 0.3823
+    to_signed(984, N), -- 0.4898
     to_signed(1024, N)); -- 0.5
 constant rom2 : memory := (
     to_signed(0, N), -- 0
-    to_signed(762, N), -- 0.3721
-    to_signed(241, N), -- 0.1177
-    to_signed(1003, N), -- 0.4898
-    to_signed(21, N), -- 0.0102
-    to_signed(783, N), -- 0.3823
-    to_signed(262, N), -- 0.1279
+    to_signed(712, N), -- 0.3721
+    to_signed(271, N), -- 0.1177
+    to_signed(984, N), -- 0.4898
+    to_signed(40, N), -- 0.0102
+    to_signed(753, N), -- 0.3823
+    to_signed(312, N), -- 0.1279
     to_signed(1024, N)); -- 0.5
 begin
 --    process(clk)
