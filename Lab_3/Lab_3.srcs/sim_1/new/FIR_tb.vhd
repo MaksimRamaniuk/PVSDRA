@@ -52,7 +52,7 @@ begin
         wait for clk_period;
         start <= '0';
         wait until ready = '1';
-       
+     
         wait for clk_period*2;
         x <= std_logic_vector(to_signed(0, N)); -- x = 0 in Q1.11
         wait for clk_period/2;

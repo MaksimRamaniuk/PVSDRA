@@ -26,7 +26,13 @@ signal addr21, addr22, addr23 : STD_LOGIC_VECTOR(2 downto 0);
 
 signal coef11, coef12, coef13 : STD_LOGIC_VECTOR(N-1 downto 0);
 signal coef21, coef22, coef23 : STD_LOGIC_VECTOR(N-1 downto 0);
+
+signal coef11_shift, coef12_shift : STD_LOGIC_VECTOR(N-1 downto 0);
+signal coef21_shift, coef22_shift : STD_LOGIC_VECTOR(N-1 downto 0);
+
+signal sum1, sum2 : STD_LOGIC_VECTOR(N-1 downto 0) := (others => '0');
 signal acc1, acc2 : STD_LOGIC_VECTOR(N-1 downto 0) := (others => '0');
+signal acc1_prev, acc2_prev : STD_LOGIC_VECTOR(N-1 downto 0) := (others => '0');
 begin
     control_device: entity work.FSM
     generic map (N => N)
@@ -43,6 +49,11 @@ begin
     ROM3: entity work.ROM
     generic map (N => N)
     port map (clk => clk, addr1 => addr13, addr2 => addr23, coef1 => coef13, coef2 => coef23);
+
+    coef11_shift <= coef11(N-1) & coef11(N-1) & coef11(N-1 downto 2);
+    coef12_shift <= coef12(N-1) & coef12(N-1 downto 1);
+    coef21_shift <= coef21(N-1) & coef21(N-1) & coef21(N-1 downto 2);
+    coef22_shift <= coef22(N-1) & coef22(N-1 downto 1);
 
     bit_count : process(clk)
     begin
@@ -69,27 +80,36 @@ begin
         end if;
     end process;
     
+    sum1 <= coef11_shift + coef12_shift;
+    sum2 <= coef21_shift + coef22_shift;
+    
+    acc1_prev <= acc1(N-1) & acc1(N-1) & acc1(N-1) & acc1(N-1 downto 3);
+    acc2_prev <= acc2(N-1) & acc2(N-1) & acc2(N-1) & acc2(N-1 downto 3);
     accumulate : process(clk)
-    variable temp1 : std_logic_vector(N-1 downto 0) := (others => '0');
-    variable temp2 : std_logic_vector(N-1 downto 0) := (others => '0');
+--    variable temp1 : std_logic_vector(N-1 downto 0) := (others => '0');
+--    variable temp2 : std_logic_vector(N-1 downto 0) := (others => '0');
     begin
         if rising_edge(clk) then
             if rst = '1' or start = '1' then 
                 acc1 <= (others => '0');
                 acc2 <= (others => '0');
             elsif calc = '1' then
-                temp1 := coef11(N-1) & coef11(N-1) & coef11(N-1 downto 2);
-                temp1 := temp1 + (coef12(N-1) & coef12(N-1 downto 1));
+--                temp1 := coef11(N-1) & coef11(N-1) & coef11(N-1 downto 2);
+--                temp1 := temp1 + (coef12(N-1) & coef12(N-1 downto 1));
                 
-                temp2 := coef21(N-1) & coef21(N-1) & coef21(N-1 downto 2);
-                temp2 := temp2 + (coef22(N-1) & coef22(N-1 downto 1));
+--                temp2 := coef21(N-1) & coef21(N-1) & coef21(N-1 downto 2);
+--                temp2 := temp2 + (coef22(N-1) & coef22(N-1 downto 1));
                 
                 if bit_idx > N/2 then
-                    acc1 <= temp1 + (acc1(N-1) & acc1(N-1) & acc1(N-1) & acc1(N-1 downto 3)) - coef13;
-                    acc2 <= temp2 + (acc2(N-1) & acc2(N-1) & acc2(N-1) & acc2(N-1 downto 3)) - coef23;
+--                    acc1 <= temp1 + (acc1(N-1) & acc1(N-1) & acc1(N-1) & acc1(N-1 downto 3)) - coef13;
+                    acc1 <= sum1 + acc1_prev - coef13;
+--                    acc2 <= temp2 + (acc2(N-1) & acc2(N-1) & acc2(N-1) & acc2(N-1 downto 3)) - coef23;
+                    acc2 <= sum2 + acc2_prev - coef23;
                 else
-                    acc1 <= temp1 + (acc1(N-1) & acc1(N-1) & acc1(N-1) & acc1(N-1 downto 3)) + coef13;
-                    acc2 <= temp2 + (acc2(N-1) & acc2(N-1) & acc2(N-1) & acc2(N-1 downto 3)) + coef23;
+--                    acc1 <= temp1 + (acc1(N-1) & acc1(N-1) & acc1(N-1) & acc1(N-1 downto 3)) + coef13;
+                    acc1 <= sum1 + acc1_prev + coef13;
+--                    acc2 <= temp2 + (acc2(N-1) & acc2(N-1) & acc2(N-1) & acc2(N-1 downto 3)) + coef23;
+                    acc2 <= sum2 + acc2_prev + coef23;
                 end if;
             end if;
         end if;

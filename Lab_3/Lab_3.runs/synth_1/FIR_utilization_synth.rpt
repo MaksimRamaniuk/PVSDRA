@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
-| Date         : Wed Nov 19 14:35:13 2025
+| Date         : Wed Nov 19 17:37:42 2025
 | Host         : DESKTOP-L33EPEV running 64-bit major release  (build 9200)
 | Command      : report_utilization -file FIR_utilization_synth.rpt -pb FIR_utilization_synth.pb
 | Design       : FIR
@@ -147,13 +147,13 @@ Table of Contents
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
 | FDRE     |  106 |        Flop & Latch |
-| LUT6     |   71 |                 LUT |
-| LUT4     |   46 |                 LUT |
-| LUT5     |   34 |                 LUT |
-| LUT3     |   21 |                 LUT |
-| LUT2     |   15 |                 LUT |
+| LUT6     |   89 |                 LUT |
+| LUT4     |   33 |                 LUT |
+| LUT3     |   33 |                 LUT |
+| LUT5     |   24 |                 LUT |
 | IBUF     |   15 |                  IO |
 | CARRY4   |   15 |          CarryLogic |
+| LUT2     |   14 |                 LUT |
 | OBUF     |   13 |                  IO |
 | LDCE     |   12 |        Flop & Latch |
 | LUT1     |    1 |                 LUT |
