@@ -1,0 +1,85 @@
+#-----------------------------------------------------------
+# Vivado v2018.2 (64-bit)
+# SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
+# IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+# Start of session at: Wed Nov 19 13:36:39 2025
+# Process ID: 7020
+# Current directory: C:/Users/Public/Documents/PVSDRA/Lab_3
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent2948 C:\Users\Public\Documents\PVSDRA\Lab_3\Lab_3.xpr
+# Log file: C:/Users/Public/Documents/PVSDRA/Lab_3/vivado.log
+# Journal file: C:/Users/Public/Documents/PVSDRA/Lab_3\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/Public/Documents/PVSDRA/Lab_3/Lab_3.xpr
+update_compile_order -fileset sources_1
+create_project test_lab3 C:/Users/Public/Documents/test_lab3 -part xc7z010clg400-1
+set_property board_part digilentinc.com:zybo-z7-10:part0:1.2 [current_project]
+set_property target_language VHDL [current_project]
+set_property simulator_language VHDL [current_project]
+add_files -norecurse {{C:/Users/Анастасия/Downloads/Telegram Desktop/rom.vhd} {C:/Users/Анастасия/Downloads/Telegram Desktop/fir_da.vhd}}
+update_compile_order -fileset sources_1
+current_project Lab_3
+launch_simulation
+source FIR_tb.tcl
+current_project test_lab3
+set_property SOURCE_SET sources_1 [get_filesets sim_1]
+add_files -fileset sim_1 -norecurse {{C:/Users/Анастасия/Downloads/Telegram Desktop/da_tb.vhd}}
+update_compile_order -fileset sim_1
+update_compile_order -fileset sim_1
+launch_simulation
+source test_DA_fir.tcl
+current_project Lab_3
+current_sim simulation_1
+restart
+run 10 us
+current_project test_lab3
+current_sim simulation_2
+relaunch_sim
+current_project Lab_3
+current_sim simulation_1
+current_project test_lab3
+current_sim simulation_2
+current_wave_config {Untitled 2}
+add_wave {{/test_DA_fir/uut/cnt}} 
+current_wave_config {Untitled 2}
+add_wave {{/test_DA_fir/uut/ts}} 
+restart
+run 10 us
+current_wave_config {Untitled 2}
+add_wave {{/test_DA_fir/uut/rom_addr0}} {{/test_DA_fir/uut/rom_addr1}} {{/test_DA_fir/uut/rom_addr2}} {{/test_DA_fir/uut/rom_addr3}} {{/test_DA_fir/uut/rom_addr4}} {{/test_DA_fir/uut/rom_addr5}} 
+restart
+run 10 us
+current_project Lab_3
+current_sim simulation_1
+current_wave_config {Untitled 1}
+add_wave {{/FIR_tb/uut/addr11}} {{/FIR_tb/uut/addr12}} {{/FIR_tb/uut/addr13}} {{/FIR_tb/uut/addr21}} {{/FIR_tb/uut/addr22}} {{/FIR_tb/uut/addr23}} 
+restart
+run 10 us
+current_wave_config {Untitled 1}
+add_wave {{/FIR_tb/uut/acc1}} {{/FIR_tb/uut/acc2}} 
+restart
+run 10 us
+current_wave_config {Untitled 1}
+add_wave {{/FIR_tb/uut/bit_idx}} 
+restart
+run 10 us
+relaunch_sim
+run 10 us
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+close_sim
+current_project test_lab3
+close_sim
+close_project
+launch_runs impl_1 -jobs 4
+wait_on_run impl_1
+open_run impl_1
+report_utilization -name utilization_1
