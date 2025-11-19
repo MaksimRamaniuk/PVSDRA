@@ -2,10 +2,10 @@
 # Vivado v2018.2 (64-bit)
 # SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
 # IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
-# Start of session at: Wed Nov 19 17:15:21 2025
-# Process ID: 12416
+# Start of session at: Wed Nov 19 19:29:28 2025
+# Process ID: 3408
 # Current directory: C:/Users/Public/Documents/PVSDRA/Lab_3
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent11880 C:\Users\Public\Documents\PVSDRA\Lab_3\Lab_3.xpr
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent8588 C:\Users\Public\Documents\PVSDRA\Lab_3\Lab_3.xpr
 # Log file: C:/Users/Public/Documents/PVSDRA/Lab_3/vivado.log
 # Journal file: C:/Users/Public/Documents/PVSDRA/Lab_3\vivado.jou
 #-----------------------------------------------------------
@@ -14,15 +14,9 @@ open_project C:/Users/Public/Documents/PVSDRA/Lab_3/Lab_3.xpr
 update_compile_order -fileset sources_1
 launch_simulation
 source FIR_tb.tcl
-current_wave_config {Untitled 1}
-add_wave {{/FIR_tb/uut/sum1}} {{/FIR_tb/uut/sum2}} {{/FIR_tb/uut/acc1}} {{/FIR_tb/uut/acc2}} {{/FIR_tb/uut/acc1_prev}} {{/FIR_tb/uut/acc2_prev}} 
-current_wave_config {Untitled 1}
-add_wave {{/FIR_tb/uut/coef11}} {{/FIR_tb/uut/coef12}} {{/FIR_tb/uut/coef13}} {{/FIR_tb/uut/coef21}} {{/FIR_tb/uut/coef22}} {{/FIR_tb/uut/coef23}} 
-restart
-run 10 us
-relaunch_sim
-relaunch_sim
-relaunch_sim
 reset_run synth_1
-launch_runs impl_1 -jobs 4
+launch_runs impl_1 -jobs 6
 wait_on_run impl_1
+close_sim
+open_run impl_1
+report_utilization -name utilization_1

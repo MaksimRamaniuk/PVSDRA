@@ -100,7 +100,7 @@ begin
 --                temp2 := coef21(N-1) & coef21(N-1) & coef21(N-1 downto 2);
 --                temp2 := temp2 + (coef22(N-1) & coef22(N-1 downto 1));
                 
-                if bit_idx > N/2 then
+                if bit_idx = (N-3) then
 --                    acc1 <= temp1 + (acc1(N-1) & acc1(N-1) & acc1(N-1) & acc1(N-1 downto 3)) - coef13;
                     acc1 <= sum1 + acc1_prev - coef13;
 --                    acc2 <= temp2 + (acc2(N-1) & acc2(N-1) & acc2(N-1) & acc2(N-1 downto 3)) - coef23;
