@@ -31,10 +31,10 @@ rom1_q = round(rom1 * Q);
 rom2_q = round(rom2 * Q);
 
 fprintf('ROM1 (Q1.11):\n');
-disp(rom1.');
+disp(rom1_q.');
 
 fprintf('ROM2 (Q1.11):\n');
-disp(rom2.');
+disp(rom2_q.');
 
 x = zeros(1, 8);
 x(1) = 1;

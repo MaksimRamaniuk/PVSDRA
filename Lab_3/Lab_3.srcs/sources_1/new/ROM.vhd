@@ -15,52 +15,25 @@ architecture Behavioral of ROM is
 type memory is array(0 to 7) of signed(N-1 downto 0);
 
 constant rom1 : memory := (
-    to_signed(0, N), -- 0
-    to_signed(40, N), -- 0.0102
-    to_signed(271, N), -- 0.1177
-    to_signed(312, N), -- 0.1279
-    to_signed(712, N), -- 0.3721
-    to_signed(753, N), -- 0.3823
-    to_signed(984, N), -- 0.4898
-    to_signed(1024, N)); -- 0.5
+    to_signed(-512, N),     
+    to_signed(-472, N),       
+    to_signed(-241, N),     
+    to_signed(-200, N),      
+    to_signed(200, N),      
+    to_signed(241, N),      
+    to_signed(472, N),      
+    to_signed(512, N));    
 constant rom2 : memory := (
-    to_signed(0, N), -- 0
-    to_signed(712, N), -- 0.3721
-    to_signed(271, N), -- 0.1177
-    to_signed(984, N), -- 0.4898
-    to_signed(40, N), -- 0.0102
-    to_signed(753, N), -- 0.3823
-    to_signed(312, N), -- 0.1279
-    to_signed(1024, N)); -- 0.5
+    to_signed(-512, N),     
+    to_signed(200, N),     
+    to_signed(-241, N),      
+    to_signed(472, N),      
+    to_signed(-472, N),      
+    to_signed(241, N),     
+    to_signed(-200, N),     
+    to_signed(512, N));
+
 begin
---    process(clk)
---    begin
---        if rising_edge(clk) then 
---            case addr1 is 
---                when "000" => coef1 <= std_logic_vector(rom1(0));
---                when "001" => coef1 <= std_logic_vector(rom1(1));
---                when "010" => coef1 <= std_logic_vector(rom1(2));
---                when "011" => coef1 <= std_logic_vector(rom1(3));
---                when "100" => coef1 <= std_logic_vector(rom1(4));
---                when "101" => coef1 <= std_logic_vector(rom1(5));
---                when "110" => coef1 <= std_logic_vector(rom1(6));
---                when "111" => coef1 <= std_logic_vector(rom1(7));
---                when others => coef1 <= (others => '0');
---            end case;
-            
---            case addr2 is 
---                when "000" => coef2 <= std_logic_vector(rom2(0));
---                when "001" => coef2 <= std_logic_vector(rom2(1));
---                when "010" => coef2 <= std_logic_vector(rom2(2));
---                when "011" => coef2 <= std_logic_vector(rom2(3));
---                when "100" => coef2 <= std_logic_vector(rom2(4));
---                when "101" => coef2 <= std_logic_vector(rom2(5));
---                when "110" => coef2 <= std_logic_vector(rom2(6));
---                when "111" => coef2 <= std_logic_vector(rom2(7));
---                when others => coef2 <= (others => '0');
---            end case;            
---        end if;
---    end process;
     coef1 <= std_logic_vector(rom1(to_integer(unsigned(addr1))));
     coef2 <= std_logic_vector(rom2(to_integer(unsigned(addr2))));
 end Behavioral;

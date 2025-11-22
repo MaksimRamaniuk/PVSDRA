@@ -2,7 +2,8 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
 entity FSM is
-    Generic ( N : integer := 12);
+    Generic ( N : integer := 12;
+              BAAT : integer := 3);
     Port (  clk : in STD_LOGIC;
             rst : in STD_LOGIC;
             start : in STD_LOGIC;
@@ -39,7 +40,7 @@ begin
                         state <= CALCULATE;
                         
                     when CALCULATE =>
-                        if bit_idx >= N-3 then
+                        if bit_idx >= N-BAAT then
                             calc <= '0';
                             state <= DONE;
                         else 

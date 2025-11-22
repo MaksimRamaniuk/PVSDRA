@@ -8,6 +8,7 @@ end FIR_tb;
 architecture Behavioral of FIR_tb is
     constant N : integer := 12;
     constant Order : integer := 6;
+    constant BAAT : integer := 3;
     constant clk_period : time := 8 ns;
     
     signal clk : STD_LOGIC := '0';
@@ -21,7 +22,8 @@ begin
     uut : entity work.FIR
     Generic map (
         N => N,
-        Order => Order)
+        Order => Order,
+        BAAT => BAAT)
     Port map (
         clk => clk,
         rst => rst,
@@ -52,12 +54,18 @@ begin
         wait for clk_period;
         start <= '0';
         wait until ready = '1';
-     
+
+        wait for clk_period/2;
+        start <= '1';
+        wait for clk_period;
+        start <= '0';
+        wait until ready = '1';
+             
         wait for clk_period*2;
         x <= std_logic_vector(to_signed(0, N)); -- x = 0 in Q1.11
         wait for clk_period/2;
 
-        for i in 0 to 8 loop
+        for i in 0 to 6 loop
             start <= '1';
             wait for clk_period;
             start <= '0';
