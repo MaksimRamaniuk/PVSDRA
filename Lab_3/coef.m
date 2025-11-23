@@ -38,6 +38,7 @@ disp(rom2_q.');
 
 x = zeros(1, 8);
 x(1) = 1;
+x(2) = 1;
 y = filter(h, 1, x);
 fprintf('FIR matlab:\n');
 disp(y);

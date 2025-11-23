@@ -8,6 +8,7 @@ entity FSM is
             rst : in STD_LOGIC;
             start : in STD_LOGIC;
             bit_idx : in integer;
+            ts : out STD_LOGIC;
             load : out STD_LOGIC;
             calc : out STD_LOGIC;
             ready : out STD_LOGIC);
@@ -24,8 +25,10 @@ begin
                 ready <= '0';
                 load <= '0';
                 calc <= '0';
+                ts <= '0';
                 state <= IDLE;
             else
+                ts <= '0';
                 case state is 
                     when IDLE =>
                         ready <= '0';
@@ -44,6 +47,9 @@ begin
                             calc <= '0';
                             state <= DONE;
                         else 
+                            if bit_idx = N-2*BAAT then
+                                ts <= '1';
+                            end if;
                             state <= CALCULATE;
                         end if;
                         
