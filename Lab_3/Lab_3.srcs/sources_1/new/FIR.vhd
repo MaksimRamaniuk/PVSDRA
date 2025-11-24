@@ -23,9 +23,9 @@ architecture Behavioral of FIR is
     signal calc, load : STD_LOGIC := '0';
     signal done : STD_LOGIC := '0';
     signal ts : STD_LOGIC := '0';
-    signal sign1, sign2 : STD_LOGIC := '0';
+    signal sign1, sign2 : STD_LOGIC;
 
-    type addr_array is array(0 to BAAT-1) of STD_LOGIC_VECTOR(1 downto 0);
+    type addr_array is array(0 to BAAT-1) of STD_LOGIC_VECTOR(2 downto 0);
     type coef_array is array(0 to BAAT-1) of STD_LOGIC_VECTOR(N-1 downto 0);
     type coef_array_shift is array(0 to BAAT-2) of STD_LOGIC_VECTOR(N-1 downto 0);
     
@@ -109,36 +109,36 @@ begin
         sum2 <= s2;
     end process;
     
-    shift_acc : process(acc1,acc2)
+    shift_acc : process(acc1,acc2, start, clk, calc)
         variable temp1, temp2 : STD_LOGIC_VECTOR(N-1 downto 0); 
-    begin
+    begin      
+        if calc = '1' then
         temp1 := acc1;
         temp2 := acc2;
         for i in 0 to BAAT-1 loop
             temp1 := temp1(N-1) & temp1(N-1 downto 1);
             temp2 := temp2(N-1) & temp2(N-1 downto 1);
         end loop;
-        if start = '1' then
-                acc1_prev <= std_logic_vector(to_signed(-512, N));
-                acc2_prev <= std_logic_vector(to_signed(-512, N));        
-        else
+        
         acc1_prev <= temp1;
         acc2_prev <= temp2;
         end if;
     end process;
+    
     sign1 <= ts xor reg(0)(bit_idx);
     sign2 <= ts xor reg(3)(bit_idx);
     
     accumulate : process(clk)
-    variable temp1, temp2 : STD_LOGIC_VECTOR(N-1 downto 0); 
+    variable count : integer range 0 to BAAT-1 := 0;
     begin
         if rising_edge(clk) then
             if rst = '1' then 
                 acc1 <= (others => '0');
                 acc2 <= (others => '0');
---            elsif start = '1' then 
---                acc1 <= std_logic_vector(to_signed(-512, N));
---                acc2 <= std_logic_vector(to_signed(-512, N));
+            elsif start = '1' then 
+                acc1 <= std_logic_vector(to_signed(-512, N));
+                acc2 <= std_logic_vector(to_signed(-512, N));
+                count := 0;
             elsif calc = '1' then
                 if sign1 = '1' then    --bit_idx = (N-BAAT) then
                     acc1 <= sum1 + acc1_prev - coef1(BAAT-1);
@@ -154,16 +154,17 @@ begin
 --                    acc1 <= sum1 + acc1_prev + coef1(BAAT-1);
                     acc2 <= sum2 + acc2_prev + coef2(BAAT-1);
                 end if;
+                count := count + 1;
             end if;
         end if;
     end process;
  
     gen_addr: for i in 0 to BAAT-1 generate
     begin
---        addr1(i) <= reg(2)(bit_idx+i) & reg(1)(bit_idx+i) & reg(0)(bit_idx+i);
---        addr2(i) <= reg(5)(bit_idx+i) & reg(4)(bit_idx+i) & reg(3)(bit_idx+i);
-        addr1(i) <= (reg(2)(bit_idx+i) xor reg(0)(bit_idx+i)) & (reg(1)(bit_idx+i) xor reg(0)(bit_idx+i));
-        addr2(i) <= (reg(5)(bit_idx+i) xor reg(3)(bit_idx+i)) & (reg(4)(bit_idx+i) xor reg(3)(bit_idx+i));
+        addr1(i) <= reg(2)(bit_idx+i) & reg(1)(bit_idx+i) & reg(0)(bit_idx+i);
+        addr2(i) <= reg(5)(bit_idx+i) & reg(4)(bit_idx+i) & reg(3)(bit_idx+i);
+--        addr1(i) <= (reg(2)(bit_idx+i) xor reg(0)(bit_idx+i)) & (reg(1)(bit_idx+i) xor reg(0)(bit_idx+i));
+--        addr2(i) <= (reg(5)(bit_idx+i) xor reg(3)(bit_idx+i)) & (reg(4)(bit_idx+i) xor reg(3)(bit_idx+i));
     end generate;
 
     y <= (others => '0') when rst = '1' else

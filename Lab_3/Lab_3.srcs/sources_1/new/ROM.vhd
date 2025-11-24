@@ -5,8 +5,8 @@ use IEEE.NUMERIC_STD.ALL;
 entity ROM is
     Generic ( N : integer := 12);
     Port ( clk : in STD_LOGIC;
-           addr1 : in STD_LOGIC_VECTOR(1 downto 0);
-           addr2 : in STD_LOGIC_VECTOR(1 downto 0);
+           addr1 : in STD_LOGIC_VECTOR(2 downto 0);
+           addr2 : in STD_LOGIC_VECTOR(2 downto 0);
            coef1 : out STD_LOGIC_VECTOR (N-1 downto 0);
            coef2 : out STD_LOGIC_VECTOR (N-1 downto 0));
 end ROM;

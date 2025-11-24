@@ -38,7 +38,13 @@ disp(rom2_q.');
 
 x = zeros(1, 8);
 x(1) = 1;
-x(2) = 1;
 y = filter(h, 1, x);
 fprintf('FIR matlab:\n');
 disp(y);
+
+% Q1_0 = -(h1(1)/2 + h1(2)/2 + h1(3)/2);
+% fprintf('Q(0) for 1 table:\n');
+% disp(Q1_0*(2^11));
+% Q2_0 = -(h2(1)/2 + h2(2)/2 + h2(3)/2);
+% fprintf('Q(0) for 2 table:\n');
+% disp(Q2_0*(2^11));

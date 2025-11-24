@@ -1,0 +1,61 @@
+#-----------------------------------------------------------
+# Vivado v2018.2 (64-bit)
+# SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
+# IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+# Start of session at: Mon Nov 24 13:38:38 2025
+# Process ID: 12400
+# Current directory: C:/Users/Public/Documents/PVSDRA/Lab_3
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent6504 C:\Users\Public\Documents\PVSDRA\Lab_3\Lab_3.xpr
+# Log file: C:/Users/Public/Documents/PVSDRA/Lab_3/vivado.log
+# Journal file: C:/Users/Public/Documents/PVSDRA/Lab_3\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/Public/Documents/PVSDRA/Lab_3/Lab_3.xpr
+update_compile_order -fileset sources_1
+launch_simulation
+source FIR_tb.tcl
+current_wave_config {Untitled 1}
+add_wave {{/FIR_tb/uut/addr1}} {{/FIR_tb/uut/addr2}} {{/FIR_tb/uut/coef1}} {{/FIR_tb/uut/coef2}} {{/FIR_tb/uut/coef1_shift}} {{/FIR_tb/uut/coef2_shift}} {{/FIR_tb/uut/sum1}} {{/FIR_tb/uut/sum2}} {{/FIR_tb/uut/acc1}} {{/FIR_tb/uut/acc2}} {{/FIR_tb/uut/acc1_prev}} {{/FIR_tb/uut/acc2_prev}} 
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+reset_run impl_1
+reset_run synth_1
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+current_wave_config {Untitled 1}
+add_wave {{/FIR_tb/uut/ts}} 
+current_wave_config {Untitled 1}
+add_wave {{/FIR_tb/uut/sign1}} 
+current_wave_config {Untitled 1}
+add_wave {{/FIR_tb/uut/sign2}} 
+restart
+run 10 us
+current_wave_config {Untitled 1}
+add_wave {{/FIR_tb/uut/reg}} 
+current_wave_config {Untitled 1}
+add_wave {{/FIR_tb/uut/bit_idx}} 
+restart
+run 10 us
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+save_wave_config {C:/Users/Public/Documents/PVSDRA/Lab_3/FIR_tb_behav.wcfg}
+add_files -fileset sim_1 -norecurse C:/Users/Public/Documents/PVSDRA/Lab_3/FIR_tb_behav.wcfg
+set_property xsim.view C:/Users/Public/Documents/PVSDRA/Lab_3/FIR_tb_behav.wcfg [get_filesets sim_1]
+close_sim

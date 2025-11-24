@@ -48,11 +48,11 @@ begin
         rst <= '0';
         wait for clk_period*2;
         
-        x <= std_logic_vector(to_signed(2047, N)); -- x = 1 in Q1.11
+        x <= std_logic_vector(to_signed(2048, N)); -- x = 1 in Q1.11
         wait for clk_period/2;
         start <= '1';
-        wait for clk_period;
-        start <= '0';
+        wait for clk_period;  
+        start <= '0';      
         wait until ready = '1';
              
         wait for clk_period*2;
