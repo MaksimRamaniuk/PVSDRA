@@ -25,7 +25,7 @@ architecture Behavioral of FIR is
     signal ts : STD_LOGIC := '0';
     signal sign1, sign2 : STD_LOGIC;
 
-    type addr_array is array(0 to BAAT-1) of STD_LOGIC_VECTOR(2 downto 0);
+    type addr_array is array(0 to BAAT-1) of STD_LOGIC_VECTOR(1 downto 0);
     type coef_array is array(0 to BAAT-1) of STD_LOGIC_VECTOR(N-1 downto 0);
     type coef_array_shift is array(0 to BAAT-2) of STD_LOGIC_VECTOR(N-1 downto 0);
     
@@ -52,7 +52,6 @@ begin
         generic map (N => N)
         port map ( clk => clk, addr1 => addr1(i), addr2 => addr2(i), coef1 => coef1(i), coef2 => coef2(i));
     end generate;
-
  
     coef_shift : process(coef1, coef2)
     variable temp1, temp2 : STD_LOGIC_VECTOR(N-1 downto 0); 
@@ -142,16 +141,12 @@ begin
             elsif calc = '1' then
                 if sign1 = '1' then    --bit_idx = (N-BAAT) then
                     acc1 <= sum1 + acc1_prev - coef1(BAAT-1);
---                    acc2 <= sum2 + acc2_prev - coef2(BAAT-1);
                 else
                     acc1 <= sum1 + acc1_prev + coef1(BAAT-1);
---                    acc2 <= sum2 + acc2_prev + coef2(BAAT-1);
                 end if;
                 if sign2 = '1' then    --bit_idx = (N-BAAT) then
---                    acc1 <= sum1 + acc1_prev - coef1(BAAT-1);
                     acc2 <= sum2 + acc2_prev - coef2(BAAT-1);
                 else
---                    acc1 <= sum1 + acc1_prev + coef1(BAAT-1);
                     acc2 <= sum2 + acc2_prev + coef2(BAAT-1);
                 end if;
                 count := count + 1;
@@ -161,10 +156,10 @@ begin
  
     gen_addr: for i in 0 to BAAT-1 generate
     begin
-        addr1(i) <= reg(2)(bit_idx+i) & reg(1)(bit_idx+i) & reg(0)(bit_idx+i);
-        addr2(i) <= reg(5)(bit_idx+i) & reg(4)(bit_idx+i) & reg(3)(bit_idx+i);
---        addr1(i) <= (reg(2)(bit_idx+i) xor reg(0)(bit_idx+i)) & (reg(1)(bit_idx+i) xor reg(0)(bit_idx+i));
---        addr2(i) <= (reg(5)(bit_idx+i) xor reg(3)(bit_idx+i)) & (reg(4)(bit_idx+i) xor reg(3)(bit_idx+i));
+--        addr1(i) <= reg(2)(bit_idx+i) & reg(1)(bit_idx+i) & reg(0)(bit_idx+i);
+--        addr2(i) <= reg(5)(bit_idx+i) & reg(4)(bit_idx+i) & reg(3)(bit_idx+i);
+        addr1(i) <= (reg(2)(bit_idx+i) xor reg(0)(bit_idx+i)) & (reg(1)(bit_idx+i) xor reg(0)(bit_idx+i));
+        addr2(i) <= (reg(5)(bit_idx+i) xor reg(3)(bit_idx+i)) & (reg(4)(bit_idx+i) xor reg(3)(bit_idx+i));
     end generate;
 
     y <= (others => '0') when rst = '1' else

@@ -8,7 +8,7 @@ end FIR_tb;
 architecture Behavioral of FIR_tb is
     constant N : integer := 12;
     constant Order : integer := 6;
-    constant BAAT : integer := 3;
+    constant BAAT : integer := 1;
     constant clk_period : time := 8 ns;
     
     signal clk : STD_LOGIC := '0';
@@ -48,7 +48,7 @@ begin
         rst <= '0';
         wait for clk_period*2;
         
-        x <= std_logic_vector(to_signed(2048, N)); -- x = 1 in Q1.11
+        x <= std_logic_vector(to_signed(2047, N)); -- x ~= 1 in Q1.11
         wait for clk_period/2;
         start <= '1';
         wait for clk_period;  
