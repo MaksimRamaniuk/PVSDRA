@@ -1,9 +1,9 @@
 clear; clc;
 
-N = 6;          % Порядок фильтра
-Order = 12;     % Разрядность (Q1.11)
+Order = 6;          % Порядок фильтра
+N = 12;     % Разрядность (Q1.11)
 
-h = fir1(N-1, 0.2);
+h = fir1(Order-1, 0.2);
 fprintf('Коэффициенты FIR:\n');
 disp(h);
 
@@ -27,7 +27,7 @@ for addr = 0:3
     rom2(addr+1) = (-1/2)*(h2(1) + bits(2)*h2(2) + bits(1)*h2(3));
 end
 
-Q = 2^(Order-1);
+Q = 2^(N-1);
 rom1_q = round(rom1 * Q);
 rom2_q = round(rom2 * Q);
 
@@ -45,7 +45,7 @@ disp(y);
 
 % Q1_0 = -(h1(1)/2 + h1(2)/2 + h1(3)/2);
 % fprintf('Q(0) for 1 table:\n');
-% disp(Q1_0*(2^11));
+% disp(Q1_0*(2^(N-1)));
 % Q2_0 = -(h2(1)/2 + h2(2)/2 + h2(3)/2);
 % fprintf('Q(0) for 2 table:\n');
-% disp(Q2_0*(2^11));
+% disp(Q2_0*(2^(N-1)));
