@@ -10,20 +10,21 @@ disp(h);
 h1 = h(1:3);
 h2 = h(4:6);
 
-rom1 = zeros(8,1);
-rom2 = zeros(8,1);
+rom1 = zeros(4,1);
+rom2 = zeros(4,1);
 
-for addr = 0:7
-    bits = bitget(addr, [1 2 3]);
-    for i = 1:3
+for addr = 0:3
+    bits = bitget(addr, [1 2]);
+%     fprintf('Адрес: %d (%d %d) \n', addr, bits(2), bits(1));
+    for i = 1:2
         if bits(i) == 1 
             bits(i) = -1;
         else
             bits(i) = 1;
         end
     end
-    rom1(addr+1) = (-1/2)*(bits(1)*h1(1) + bits(2)*h1(2) + bits(3)*h1(3));
-    rom2(addr+1) = (-1/2)*(bits(1)*h2(1) + bits(2)*h2(2) + bits(3)*h2(3));
+    rom1(addr+1) = (-1/2)*(h1(1) + bits(2)*h1(2) + bits(1)*h1(3));
+    rom2(addr+1) = (-1/2)*(h2(1) + bits(2)*h2(2) + bits(1)*h2(3));
 end
 
 Q = 2^(Order-1);

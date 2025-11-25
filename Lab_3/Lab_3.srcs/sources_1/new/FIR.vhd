@@ -124,8 +124,8 @@ begin
         end if;
     end process;
     
-    sign1 <= ts xor reg(0)(bit_idx);
-    sign2 <= ts xor reg(3)(bit_idx);
+    sign1 <= ts xor reg(0)(bit_idx);    -- + BAAT-1
+    sign2 <= ts xor reg(3)(bit_idx);    -- + BAAT-1
     
     accumulate : process(clk)
     variable count : integer range 0 to BAAT-1 := 0;
@@ -158,8 +158,8 @@ begin
     begin
 --        addr1(i) <= reg(2)(bit_idx+i) & reg(1)(bit_idx+i) & reg(0)(bit_idx+i);
 --        addr2(i) <= reg(5)(bit_idx+i) & reg(4)(bit_idx+i) & reg(3)(bit_idx+i);
-        addr1(i) <= (reg(2)(bit_idx+i) xor reg(0)(bit_idx+i)) & (reg(1)(bit_idx+i) xor reg(0)(bit_idx+i));
-        addr2(i) <= (reg(5)(bit_idx+i) xor reg(3)(bit_idx+i)) & (reg(4)(bit_idx+i) xor reg(3)(bit_idx+i));
+        addr1(i) <= (reg(1)(bit_idx+i) xor reg(0)(bit_idx+i)) & (reg(2)(bit_idx+i) xor reg(0)(bit_idx+i));
+        addr2(i) <= (reg(4)(bit_idx+i) xor reg(3)(bit_idx+i)) & (reg(5)(bit_idx+i) xor reg(3)(bit_idx+i));
     end generate;
 
     y <= (others => '0') when rst = '1' else
