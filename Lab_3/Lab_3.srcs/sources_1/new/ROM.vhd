@@ -17,12 +17,12 @@ type memory is array(0 to 3) of signed(N-1 downto 0);
     to_signed(-512, N),     
     to_signed(200, N),       
     to_signed(-241, N),      
-    to_signed(472, N));       
+    to_signed(-472, N));       
 constant rom2 : memory := (
     to_signed(-512, N),     
     to_signed(-472, N),      
     to_signed(-241, N),    
-    to_signed(-200, N));    
+    to_signed(200, N));    
 --    constant rom1 : memory := (
 --        to_signed(-512, N),     
 --        to_signed(-472, N),       

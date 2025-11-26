@@ -124,26 +124,10 @@ begin
         end if;
     end process;
     
-    sign1 <= ts xor reg(0)(bit_idx);    -- + BAAT-1
-    sign2 <= ts xor reg(3)(bit_idx);    -- + BAAT-1
-    
---    process(ts, bit_idx, reg)
---    variable temp1, temp2 : STD_LOGIC;
---    begin
---        temp1 := ts;
---        temp2 := ts;
-        
---        for i in 0 to BAAT-1 loop
---            temp1 := temp1 xor reg(0)(bit_idx+i);
---            temp2 := temp2 xor reg(3)(bit_idx+i);
---        end loop;
-        
---        sign1 <= temp1;
---        sign2 <= temp2;    
---    end process;
+    sign1 <= ts xor reg(0)(N-1);
+    sign2 <= ts xor reg(3)(N-1);
     
     accumulate : process(clk)
-    variable count : integer range 0 to BAAT-1 := 0;
     begin
         if rising_edge(clk) then
             if rst = '1' then 
@@ -152,7 +136,6 @@ begin
             elsif start = '1' then 
                 acc1 <= std_logic_vector(to_signed(-512, N));
                 acc2 <= std_logic_vector(to_signed(-512, N));
-                count := 0;
             elsif calc = '1' then
                 if sign1 = '1' then    --bit_idx = (N-BAAT) then
                     acc1 <= sum1 + acc1_prev - coef1(BAAT-1);
@@ -164,7 +147,6 @@ begin
                 else
                     acc2 <= sum2 + acc2_prev + coef2(BAAT-1);
                 end if;
-                count := count + 1;
             end if;
         end if;
     end process;

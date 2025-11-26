@@ -10,15 +10,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="0fs"></ZoomStartTime>
-      <ZoomEndTime time="604000001fs"></ZoomEndTime>
-      <Cursor1Time time="203025000fs"></Cursor1Time>
+      <ZoomStartTime time="51216667fs"></ZoomStartTime>
+      <ZoomEndTime time="151916668fs"></ZoomEndTime>
+      <Cursor1Time time="68000000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="112"></NameColumnWidth>
-      <ValueColumnWidth column_width="58"></ValueColumnWidth>
+      <NameColumnWidth column_width="108"></NameColumnWidth>
+      <ValueColumnWidth column_width="99"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="27" />
+   <WVObjectSize size="25" />
    <wvobject fp_name="/FIR_tb/clk" type="logic">
       <obj_property name="ElementShortName">clk</obj_property>
       <obj_property name="ObjectShortName">clk</obj_property>
@@ -110,6 +110,31 @@
       <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
       <obj_property name="radix_fractionWidth">11</obj_property>
       <obj_property name="radix_otherWidth">0</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject fp_name="/FIR_tb/uut/coef1[0]" type="array">
+         <obj_property name="ElementShortName">[0][11:0]</obj_property>
+         <obj_property name="ObjectShortName">[0][11:0]</obj_property>
+         <obj_property name="Radix">REALRADIX</obj_property>
+         <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+         <obj_property name="radix_fractionWidth">11</obj_property>
+         <obj_property name="radix_otherWidth">0</obj_property>
+      </wvobject>
+      <wvobject fp_name="/FIR_tb/uut/coef1[1]" type="array">
+         <obj_property name="ElementShortName">[1][11:0]</obj_property>
+         <obj_property name="ObjectShortName">[1][11:0]</obj_property>
+         <obj_property name="Radix">REALRADIX</obj_property>
+         <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+         <obj_property name="radix_fractionWidth">11</obj_property>
+         <obj_property name="radix_otherWidth">0</obj_property>
+      </wvobject>
+      <wvobject fp_name="/FIR_tb/uut/coef1[2]" type="array">
+         <obj_property name="ElementShortName">[2][11:0]</obj_property>
+         <obj_property name="ObjectShortName">[2][11:0]</obj_property>
+         <obj_property name="Radix">REALRADIX</obj_property>
+         <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+         <obj_property name="radix_fractionWidth">11</obj_property>
+         <obj_property name="radix_otherWidth">0</obj_property>
+      </wvobject>
    </wvobject>
    <wvobject fp_name="/FIR_tb/uut/coef2" type="array">
       <obj_property name="ElementShortName">coef2[0:2][11:0]</obj_property>
@@ -154,14 +179,6 @@
    <wvobject fp_name="/FIR_tb/uut/ts" type="logic">
       <obj_property name="ElementShortName">ts</obj_property>
       <obj_property name="ObjectShortName">ts</obj_property>
-   </wvobject>
-   <wvobject fp_name="/FIR_tb/uut/sign1" type="logic">
-      <obj_property name="ElementShortName">sign1</obj_property>
-      <obj_property name="ObjectShortName">sign1</obj_property>
-   </wvobject>
-   <wvobject fp_name="/FIR_tb/uut/sign2" type="logic">
-      <obj_property name="ElementShortName">sign2</obj_property>
-      <obj_property name="ObjectShortName">sign2</obj_property>
    </wvobject>
    <wvobject fp_name="/FIR_tb/uut/reg" type="array">
       <obj_property name="ElementShortName">reg[0:5][11:0]</obj_property>
