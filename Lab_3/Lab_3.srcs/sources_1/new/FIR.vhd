@@ -127,6 +127,21 @@ begin
     sign1 <= ts xor reg(0)(bit_idx);    -- + BAAT-1
     sign2 <= ts xor reg(3)(bit_idx);    -- + BAAT-1
     
+--    process(ts, bit_idx, reg)
+--    variable temp1, temp2 : STD_LOGIC;
+--    begin
+--        temp1 := ts;
+--        temp2 := ts;
+        
+--        for i in 0 to BAAT-1 loop
+--            temp1 := temp1 xor reg(0)(bit_idx+i);
+--            temp2 := temp2 xor reg(3)(bit_idx+i);
+--        end loop;
+        
+--        sign1 <= temp1;
+--        sign2 <= temp2;    
+--    end process;
+    
     accumulate : process(clk)
     variable count : integer range 0 to BAAT-1 := 0;
     begin
