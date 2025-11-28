@@ -8,7 +8,7 @@ end FIR_tb;
 architecture Behavioral of FIR_tb is
     constant N : integer := 12;
     constant Order : integer := 6;
-    constant BAAT : integer := 3;
+    constant BAAT : integer := 1;
     constant clk_period : time := 8 ns;
     
     signal clk : STD_LOGIC := '0';

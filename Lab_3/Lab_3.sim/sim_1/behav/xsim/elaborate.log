@@ -15,7 +15,7 @@ Compiling package std.env
 Compiling package ieee.std_logic_arith
 Compiling package ieee.std_logic_unsigned
 Compiling architecture behavioral of entity xil_defaultlib.ROM [rom_default]
-Compiling architecture behavioral of entity xil_defaultlib.FSM [fsm_default]
-Compiling architecture behavioral of entity xil_defaultlib.FIR [fir_default]
+Compiling architecture behavioral of entity xil_defaultlib.FSM [\FSM(baat=1)\]
+Compiling architecture behavioral of entity xil_defaultlib.FIR [\FIR(baat=1)\]
 Compiling architecture behavioral of entity xil_defaultlib.fir_tb
 Built simulation snapshot FIR_tb_behav
