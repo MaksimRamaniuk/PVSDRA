@@ -1,0 +1,19 @@
+#-----------------------------------------------------------
+# Vivado v2018.2 (64-bit)
+# SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
+# IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+# Start of session at: Mon Dec  1 15:36:37 2025
+# Process ID: 14876
+# Current directory: C:/Users/Public/Documents/PVSDRA/Lab_2
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent13028 C:\Users\Public\Documents\PVSDRA\Lab_2\Lab_2.xpr
+# Log file: C:/Users/Public/Documents/PVSDRA/Lab_2/vivado.log
+# Journal file: C:/Users/Public/Documents/PVSDRA/Lab_2\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/Public/Documents/PVSDRA/Lab_2/Lab_2.xpr
+update_compile_order -fileset sources_1
+launch_simulation
+open_wave_config C:/Users/Public/Documents/PVSDRA/Lab_2/IIR_simulation.wcfg
+source IIR_tb.tcl
+run 10 s
+close_sim

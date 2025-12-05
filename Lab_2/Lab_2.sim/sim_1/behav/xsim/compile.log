@@ -1,2 +1,16 @@
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Public/Documents/PVSDRA/Lab_2/Lab_2.srcs/sources_1/FSM.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity FSM
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Public/Documents/PVSDRA/Lab_2/Lab_2.srcs/sources_1/ROM.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity ROM
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Public/Documents/PVSDRA/Lab_2/Lab_2.srcs/sources_1/MAC/mult.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity mult
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Public/Documents/PVSDRA/Lab_2/Lab_2.srcs/sources_1/MAC/reg.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity reg
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Public/Documents/PVSDRA/Lab_2/Lab_2.srcs/sources_1/MAC/controller.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity controller
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Public/Documents/PVSDRA/Lab_2/Lab_2.srcs/sources_1/MAC/mac.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity mac
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Public/Documents/PVSDRA/Lab_2/Lab_2.srcs/sources_1/IIR.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity IIR
 INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Public/Documents/PVSDRA/Lab_2/Lab_2.srcs/sim_1/IIR_tb.vhd" into library xil_defaultlib
 INFO: [VRFC 10-307] analyzing entity IIR_tb

@@ -1,0 +1,656 @@
+#-----------------------------------------------------------
+# Vivado v2018.2 (64-bit)
+# SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
+# IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+# Start of session at: Fri Dec  5 15:38:11 2025
+# Process ID: 7604
+# Current directory: C:/Users/Public/Documents/PVSDRA/Lab_4
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent1444 C:\Users\Public\Documents\PVSDRA\Lab_4\Lab_4.xpr
+# Log file: C:/Users/Public/Documents/PVSDRA/Lab_4/vivado.log
+# Journal file: C:/Users/Public/Documents/PVSDRA/Lab_4\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/Public/Documents/PVSDRA/Lab_4/Lab_4.xpr
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Xilinx/Vivado/2018.2/data/ip'.
+open_project: Time (s): cpu = 00:00:28 ; elapsed = 00:00:28 . Memory (MB): peak = 869.352 ; gain = 110.625
+update_compile_order -fileset sources_1
+export_ip_user_files -of_objects  [get_files C:/Users/Public/Documents/PVSDRA/Lab_4/Lab_4.srcs/sources_1/new/cordic.vhd] -no_script -reset -force -quiet
+remove_files  C:/Users/Public/Documents/PVSDRA/Lab_4/Lab_4.srcs/sources_1/new/cordic.vhd
+close [ open C:/Users/Public/Documents/PVSDRA/Lab_4/Lab_4.srcs/sources_1/new/FSM.vhd w ]
+add_files C:/Users/Public/Documents/PVSDRA/Lab_4/Lab_4.srcs/sources_1/new/FSM.vhd
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+set_property top FSM [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+update_compile_order -fileset sim_1
+launch_simulation
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Public/Documents/PVSDRA/Lab_4/Lab_4.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'FSM' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/Public/Documents/PVSDRA/Lab_4/Lab_4.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj FSM_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Public/Documents/PVSDRA/Lab_4/Lab_4.srcs/sources_1/new/FSM.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity FSM
+INFO: [USF-XSim-69] 'compile' step finished in '4' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/Public/Documents/PVSDRA/Lab_4/Lab_4.sim/sim_1/behav/xsim'
+Vivado Simulator 2018.2
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: D:/Xilinx/Vivado/2018.2/bin/unwrapped/win64.o/xelab.exe -wto fe9a41d05f22498abc16741f5405eb2f --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot FSM_behav xil_defaultlib.FSM -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+ERROR: [VRFC 10-2665] formal generic n has no actual or default value [C:/Users/Public/Documents/PVSDRA/Lab_4/Lab_4.srcs/sources_1/new/FSM.vhd:5]
+ERROR: [XSIM 43-3321] Static elaboration of top level VHDL design unit fsm in library work failed.
+INFO: [USF-XSim-69] 'elaborate' step finished in '4' seconds
+INFO: [USF-XSim-99] Step results log file:'C:/Users/Public/Documents/PVSDRA/Lab_4/Lab_4.sim/sim_1/behav/xsim/elaborate.log'
+ERROR: [USF-XSim-62] 'elaborate' step failed with error(s). Please check the Tcl console output or 'C:/Users/Public/Documents/PVSDRA/Lab_4/Lab_4.sim/sim_1/behav/xsim/elaborate.log' file for more information.
+ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
+launch_simulation: Time (s): cpu = 00:00:01 ; elapsed = 00:00:10 . Memory (MB): peak = 958.066 ; gain = 7.070
+ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+launch_simulation
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Public/Documents/PVSDRA/Lab_4/Lab_4.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'FSM' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/Public/Documents/PVSDRA/Lab_4/Lab_4.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj FSM_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Public/Documents/PVSDRA/Lab_4/Lab_4.srcs/sources_1/new/FSM.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity FSM
+INFO: [USF-XSim-69] 'compile' step finished in '3' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/Public/Documents/PVSDRA/Lab_4/Lab_4.sim/sim_1/behav/xsim'
+Vivado Simulator 2018.2
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: D:/Xilinx/Vivado/2018.2/bin/unwrapped/win64.o/xelab.exe -wto fe9a41d05f22498abc16741f5405eb2f --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot FSM_behav xil_defaultlib.FSM -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+ERROR: [VRFC 10-2335] case statement does not cover all choices. 'others' clause is needed [C:/Users/Public/Documents/PVSDRA/Lab_4/Lab_4.srcs/sources_1/new/FSM.vhd:30]
+ERROR: [XSIM 43-3321] Static elaboration of top level VHDL design unit fsm in library work failed.
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-99] Step results log file:'C:/Users/Public/Documents/PVSDRA/Lab_4/Lab_4.sim/sim_1/behav/xsim/elaborate.log'
+ERROR: [USF-XSim-62] 'elaborate' step failed with error(s). Please check the Tcl console output or 'C:/Users/Public/Documents/PVSDRA/Lab_4/Lab_4.sim/sim_1/behav/xsim/elaborate.log' file for more information.
+ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
+launch_simulation: Time (s): cpu = 00:00:01 ; elapsed = 00:00:06 . Memory (MB): peak = 959.816 ; gain = 0.031
+ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+launch_simulation
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Public/Documents/PVSDRA/Lab_4/Lab_4.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'FSM' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/Public/Documents/PVSDRA/Lab_4/Lab_4.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/Public/Documents/PVSDRA/Lab_4/Lab_4.sim/sim_1/behav/xsim'
+Vivado Simulator 2018.2
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: D:/Xilinx/Vivado/2018.2/bin/unwrapped/win64.o/xelab.exe -wto fe9a41d05f22498abc16741f5405eb2f --incr --debug typical --relax --mt 2 -L secureip --snapshot FSM_behav xil_defaultlib.FSM -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+ERROR: [VRFC 10-2335] case statement does not cover all choices. 'others' clause is needed [C:/Users/Public/Documents/PVSDRA/Lab_4/Lab_4.srcs/sources_1/new/FSM.vhd:30]
+ERROR: [XSIM 43-3321] Static elaboration of top level VHDL design unit fsm in library work failed.
+INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
+INFO: [USF-XSim-99] Step results log file:'C:/Users/Public/Documents/PVSDRA/Lab_4/Lab_4.sim/sim_1/behav/xsim/elaborate.log'
+ERROR: [USF-XSim-62] 'elaborate' step failed with error(s). Please check the Tcl console output or 'C:/Users/Public/Documents/PVSDRA/Lab_4/Lab_4.sim/sim_1/behav/xsim/elaborate.log' file for more information.
+ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
+launch_simulation: Time (s): cpu = 00:00:01 ; elapsed = 00:00:06 . Memory (MB): peak = 965.895 ; gain = 0.000
+ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sim_1
+set_property top FSM [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+update_compile_order -fileset sim_1
+launch_simulation
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Public/Documents/PVSDRA/Lab_4/Lab_4.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'FSM' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/Public/Documents/PVSDRA/Lab_4/Lab_4.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj FSM_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Public/Documents/PVSDRA/Lab_4/Lab_4.srcs/sources_1/new/FSM.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity FSM
+INFO: [USF-XSim-69] 'compile' step finished in '3' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/Public/Documents/PVSDRA/Lab_4/Lab_4.sim/sim_1/behav/xsim'
+Vivado Simulator 2018.2
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: D:/Xilinx/Vivado/2018.2/bin/unwrapped/win64.o/xelab.exe -wto fe9a41d05f22498abc16741f5405eb2f --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot FSM_behav xil_defaultlib.FSM -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling architecture behavioral of entity xil_defaultlib.fsm
+Built simulation snapshot FSM_behav
+
+****** Webtalk v2018.2 (64-bit)
+  **** SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
+  **** IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+source C:/Users/Public/Documents/PVSDRA/Lab_4/Lab_4.sim/sim_1/behav/xsim/xsim.dir/FSM_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-206] Exiting Webtalk at Fri Dec  5 16:50:12 2025...
+run_program: Time (s): cpu = 00:00:01 ; elapsed = 00:00:12 . Memory (MB): peak = 966.438 ; gain = 0.000
+INFO: [USF-XSim-69] 'elaborate' step finished in '12' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/Public/Documents/PVSDRA/Lab_4/Lab_4.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "FSM_behav -key {Behavioral:sim_1:Functional:FSM} -tclbatch {FSM.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2018.2
+Time resolution is 1 ps
+source FSM.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'FSM_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:07 ; elapsed = 00:00:21 . Memory (MB): peak = 966.438 ; gain = 0.000
+add_force {/FSM/count} -radix hex {1 0ns}
+run 1 s
+add_force {/FSM/count} -radix hex {2 0ns}
+run 1 ns
+run 1 ns
+run 1 ns
+run 1 us
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+close_sim: Time (s): cpu = 00:00:02 ; elapsed = 00:00:08 . Memory (MB): peak = 980.941 ; gain = 0.000
+set_property top cordic_module_tb [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+update_compile_order -fileset sim_1
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:/Users/Public/Documents/PVSDRA/Lab_4/Lab_4.srcs/sources_1/new/CORDIC_coprocessor.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:/Users/Public/Documents/PVSDRA/Lab_4/Lab_4.srcs/sources_1/new/FSM.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:/Users/Public/Documents/PVSDRA/Lab_4/Lab_4.srcs/sim_1/new/cordic_module_tb.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:/Users/Public/Documents/PVSDRA/Lab_4/Lab_4.srcs/sources_1/new/CORDIC_coprocessor.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:/Users/Public/Documents/PVSDRA/Lab_4/Lab_4.srcs/sources_1/new/FSM.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:/Users/Public/Documents/PVSDRA/Lab_4/Lab_4.srcs/sim_1/new/cordic_module_tb.vhd:]
+update_ip_catalog
+update_ip_catalog
+launch_simulation
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Public/Documents/PVSDRA/Lab_4/Lab_4.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'cordic_module_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/Public/Documents/PVSDRA/Lab_4/Lab_4.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj cordic_module_tb_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Public/Documents/PVSDRA/Lab_4/Lab_4.srcs/sources_1/new/CORDIC_coprocessor.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity CORDIC_coprocessor
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Public/Documents/PVSDRA/Lab_4/Lab_4.srcs/sim_1/new/cordic_module_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity cordic_module_tb
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/Public/Documents/PVSDRA/Lab_4/Lab_4.sim/sim_1/behav/xsim'
+Vivado Simulator 2018.2
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: D:/Xilinx/Vivado/2018.2/bin/unwrapped/win64.o/xelab.exe -wto fe9a41d05f22498abc16741f5405eb2f --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot cordic_module_tb_behav xil_defaultlib.cordic_module_tb -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+ERROR: [VRFC 10-664] expression has 10 elements ; expected 9 [C:/Users/Public/Documents/PVSDRA/Lab_4/Lab_4.srcs/sources_1/new/CORDIC_coprocessor.vhd:103]
+ERROR: [XSIM 43-3321] Static elaboration of top level VHDL design unit cordic_module_tb in library work failed.
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-99] Step results log file:'C:/Users/Public/Documents/PVSDRA/Lab_4/Lab_4.sim/sim_1/behav/xsim/elaborate.log'
+ERROR: [USF-XSim-62] 'elaborate' step failed with error(s). Please check the Tcl console output or 'C:/Users/Public/Documents/PVSDRA/Lab_4/Lab_4.sim/sim_1/behav/xsim/elaborate.log' file for more information.
+ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
+ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+launch_simulation
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Public/Documents/PVSDRA/Lab_4/Lab_4.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'cordic_module_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/Public/Documents/PVSDRA/Lab_4/Lab_4.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj cordic_module_tb_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Public/Documents/PVSDRA/Lab_4/Lab_4.srcs/sources_1/new/CORDIC_coprocessor.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity CORDIC_coprocessor
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/Public/Documents/PVSDRA/Lab_4/Lab_4.sim/sim_1/behav/xsim'
+Vivado Simulator 2018.2
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: D:/Xilinx/Vivado/2018.2/bin/unwrapped/win64.o/xelab.exe -wto fe9a41d05f22498abc16741f5405eb2f --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot cordic_module_tb_behav xil_defaultlib.cordic_module_tb -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package std.env
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_signed
+Compiling architecture rtl of entity xil_defaultlib.CORDIC_coprocessor [cordic_coprocessor_default]
+Compiling architecture cordic_module_tb_arch of entity xil_defaultlib.cordic_module_tb
+Built simulation snapshot cordic_module_tb_behav
+
+****** Webtalk v2018.2 (64-bit)
+  **** SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
+  **** IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+source C:/Users/Public/Documents/PVSDRA/Lab_4/Lab_4.sim/sim_1/behav/xsim/xsim.dir/cordic_module_tb_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-206] Exiting Webtalk at Fri Dec  5 18:35:12 2025...
+INFO: [USF-XSim-69] 'elaborate' step finished in '4' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/Public/Documents/PVSDRA/Lab_4/Lab_4.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "cordic_module_tb_behav -key {Behavioral:sim_1:Functional:cordic_module_tb} -tclbatch {cordic_module_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2018.2
+Time resolution is 1 ps
+source cordic_module_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'cordic_module_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:02 ; elapsed = 00:00:07 . Memory (MB): peak = 1072.121 ; gain = 6.691
+relaunch_sim
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Public/Documents/PVSDRA/Lab_4/Lab_4.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'cordic_module_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/Public/Documents/PVSDRA/Lab_4/Lab_4.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj cordic_module_tb_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Public/Documents/PVSDRA/Lab_4/Lab_4.srcs/sim_1/new/cordic_module_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity cordic_module_tb
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Public/Documents/PVSDRA/Lab_4/Lab_4.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/Public/Documents/PVSDRA/Lab_4/Lab_4.sim/sim_1/behav/xsim'
+Vivado Simulator 2018.2
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: D:/Xilinx/Vivado/2018.2/bin/unwrapped/win64.o/xelab.exe -wto fe9a41d05f22498abc16741f5405eb2f --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot cordic_module_tb_behav xil_defaultlib.cordic_module_tb -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package std.env
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_signed
+Compiling architecture rtl of entity xil_defaultlib.CORDIC_coprocessor [cordic_coprocessor_default]
+Compiling architecture cordic_module_tb_arch of entity xil_defaultlib.cordic_module_tb
+Built simulation snapshot cordic_module_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Vivado Simulator 2018.2
+Time resolution is 1 ps
+relaunch_sim: Time (s): cpu = 00:00:01 ; elapsed = 00:00:07 . Memory (MB): peak = 1079.313 ; gain = 0.000
+relaunch_sim
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Public/Documents/PVSDRA/Lab_4/Lab_4.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'cordic_module_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/Public/Documents/PVSDRA/Lab_4/Lab_4.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj cordic_module_tb_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Public/Documents/PVSDRA/Lab_4/Lab_4.srcs/sim_1/new/cordic_module_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity cordic_module_tb
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Public/Documents/PVSDRA/Lab_4/Lab_4.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/Public/Documents/PVSDRA/Lab_4/Lab_4.sim/sim_1/behav/xsim'
+Vivado Simulator 2018.2
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: D:/Xilinx/Vivado/2018.2/bin/unwrapped/win64.o/xelab.exe -wto fe9a41d05f22498abc16741f5405eb2f --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot cordic_module_tb_behav xil_defaultlib.cordic_module_tb -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package std.env
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_signed
+Compiling architecture rtl of entity xil_defaultlib.CORDIC_coprocessor [cordic_coprocessor_default]
+Compiling architecture cordic_module_tb_arch of entity xil_defaultlib.cordic_module_tb
+Built simulation snapshot cordic_module_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+Vivado Simulator 2018.2
+Time resolution is 1 ps
+relaunch_sim: Time (s): cpu = 00:00:00 ; elapsed = 00:00:06 . Memory (MB): peak = 1079.313 ; gain = 0.000
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+current_wave_config {Untitled 2}
+Untitled 2
+add_wave {{/cordic_module_tb/DUT/count}} 
+restart
+INFO: [Simtcl 6-17] Simulation restarted
+run 10 us
+save_wave_config {C:/Users/Public/Documents/PVSDRA/Lab_4/cordic_module_tb_behav.wcfg}
+add_files -fileset sim_1 -norecurse C:/Users/Public/Documents/PVSDRA/Lab_4/cordic_module_tb_behav.wcfg
+set_property xsim.view C:/Users/Public/Documents/PVSDRA/Lab_4/cordic_module_tb_behav.wcfg [get_filesets sim_1]
+current_wave_config {cordic_module_tb_behav.wcfg}
+C:/Users/Public/Documents/PVSDRA/Lab_4/cordic_module_tb_behav.wcfg
+add_wave {{/cordic_module_tb/DUT/busy}} 
+save_wave_config {C:/Users/Public/Documents/PVSDRA/Lab_4/cordic_module_tb_behav.wcfg}
+restart
+INFO: [Simtcl 6-17] Simulation restarted
+run 10 us
+relaunch_sim
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Public/Documents/PVSDRA/Lab_4/Lab_4.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'cordic_module_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/Public/Documents/PVSDRA/Lab_4/Lab_4.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj cordic_module_tb_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Public/Documents/PVSDRA/Lab_4/Lab_4.srcs/sim_1/new/cordic_module_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity cordic_module_tb
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Public/Documents/PVSDRA/Lab_4/Lab_4.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/Public/Documents/PVSDRA/Lab_4/Lab_4.sim/sim_1/behav/xsim'
+Vivado Simulator 2018.2
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: D:/Xilinx/Vivado/2018.2/bin/unwrapped/win64.o/xelab.exe -wto fe9a41d05f22498abc16741f5405eb2f --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot cordic_module_tb_behav xil_defaultlib.cordic_module_tb -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package std.env
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_signed
+Compiling architecture rtl of entity xil_defaultlib.CORDIC_coprocessor [cordic_coprocessor_default]
+Compiling architecture cordic_module_tb_arch of entity xil_defaultlib.cordic_module_tb
+Built simulation snapshot cordic_module_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+Vivado Simulator 2018.2
+Time resolution is 1 ps
+relaunch_sim: Time (s): cpu = 00:00:01 ; elapsed = 00:00:06 . Memory (MB): peak = 1087.297 ; gain = 0.000
+relaunch_sim
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Public/Documents/PVSDRA/Lab_4/Lab_4.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'cordic_module_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/Public/Documents/PVSDRA/Lab_4/Lab_4.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj cordic_module_tb_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Public/Documents/PVSDRA/Lab_4/Lab_4.srcs/sources_1/new/CORDIC_coprocessor.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity CORDIC_coprocessor
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Public/Documents/PVSDRA/Lab_4/Lab_4.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/Public/Documents/PVSDRA/Lab_4/Lab_4.sim/sim_1/behav/xsim'
+Vivado Simulator 2018.2
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: D:/Xilinx/Vivado/2018.2/bin/unwrapped/win64.o/xelab.exe -wto fe9a41d05f22498abc16741f5405eb2f --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot cordic_module_tb_behav xil_defaultlib.cordic_module_tb -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package std.env
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_signed
+Compiling architecture rtl of entity xil_defaultlib.CORDIC_coprocessor [cordic_coprocessor_default]
+Compiling architecture cordic_module_tb_arch of entity xil_defaultlib.cordic_module_tb
+Built simulation snapshot cordic_module_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Vivado Simulator 2018.2
+Time resolution is 1 ps
+relaunch_sim: Time (s): cpu = 00:00:00 ; elapsed = 00:00:07 . Memory (MB): peak = 1087.297 ; gain = 0.000
+relaunch_sim
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Public/Documents/PVSDRA/Lab_4/Lab_4.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'cordic_module_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/Public/Documents/PVSDRA/Lab_4/Lab_4.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj cordic_module_tb_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Public/Documents/PVSDRA/Lab_4/Lab_4.srcs/sim_1/new/cordic_module_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity cordic_module_tb
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Public/Documents/PVSDRA/Lab_4/Lab_4.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/Public/Documents/PVSDRA/Lab_4/Lab_4.sim/sim_1/behav/xsim'
+Vivado Simulator 2018.2
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: D:/Xilinx/Vivado/2018.2/bin/unwrapped/win64.o/xelab.exe -wto fe9a41d05f22498abc16741f5405eb2f --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot cordic_module_tb_behav xil_defaultlib.cordic_module_tb -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package std.env
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_signed
+Compiling architecture rtl of entity xil_defaultlib.CORDIC_coprocessor [cordic_coprocessor_default]
+Compiling architecture cordic_module_tb_arch of entity xil_defaultlib.cordic_module_tb
+Built simulation snapshot cordic_module_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Vivado Simulator 2018.2
+Time resolution is 1 ps
+relaunch_sim
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Public/Documents/PVSDRA/Lab_4/Lab_4.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'cordic_module_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/Public/Documents/PVSDRA/Lab_4/Lab_4.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj cordic_module_tb_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Public/Documents/PVSDRA/Lab_4/Lab_4.srcs/sim_1/new/cordic_module_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity cordic_module_tb
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Public/Documents/PVSDRA/Lab_4/Lab_4.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/Public/Documents/PVSDRA/Lab_4/Lab_4.sim/sim_1/behav/xsim'
+Vivado Simulator 2018.2
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: D:/Xilinx/Vivado/2018.2/bin/unwrapped/win64.o/xelab.exe -wto fe9a41d05f22498abc16741f5405eb2f --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot cordic_module_tb_behav xil_defaultlib.cordic_module_tb -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package std.env
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_signed
+Compiling architecture rtl of entity xil_defaultlib.CORDIC_coprocessor [cordic_coprocessor_default]
+Compiling architecture cordic_module_tb_arch of entity xil_defaultlib.cordic_module_tb
+Built simulation snapshot cordic_module_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Vivado Simulator 2018.2
+Time resolution is 1 ps
+relaunch_sim: Time (s): cpu = 00:00:01 ; elapsed = 00:00:05 . Memory (MB): peak = 1087.297 ; gain = 0.000
+relaunch_sim
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Public/Documents/PVSDRA/Lab_4/Lab_4.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'cordic_module_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/Public/Documents/PVSDRA/Lab_4/Lab_4.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj cordic_module_tb_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Public/Documents/PVSDRA/Lab_4/Lab_4.srcs/sources_1/new/CORDIC_coprocessor.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity CORDIC_coprocessor
+ERROR: [VRFC 10-1412] syntax error near : [C:/Users/Public/Documents/PVSDRA/Lab_4/Lab_4.srcs/sources_1/new/CORDIC_coprocessor.vhd:26]
+ERROR: [VRFC 10-91] memory is not declared [C:/Users/Public/Documents/PVSDRA/Lab_4/Lab_4.srcs/sources_1/new/CORDIC_coprocessor.vhd:29]
+ERROR: [VRFC 10-91] busy is not declared [C:/Users/Public/Documents/PVSDRA/Lab_4/Lab_4.srcs/sources_1/new/CORDIC_coprocessor.vhd:45]
+ERROR: [VRFC 10-91] busy is not declared [C:/Users/Public/Documents/PVSDRA/Lab_4/Lab_4.srcs/sources_1/new/CORDIC_coprocessor.vhd:54]
+ERROR: [VRFC 10-91] busy is not declared [C:/Users/Public/Documents/PVSDRA/Lab_4/Lab_4.srcs/sources_1/new/CORDIC_coprocessor.vhd:49]
+ERROR: [VRFC 10-2123] 0 definitions of operator "and" match here [C:/Users/Public/Documents/PVSDRA/Lab_4/Lab_4.srcs/sources_1/new/CORDIC_coprocessor.vhd:49]
+ERROR: [VRFC 10-91] rom is not declared [C:/Users/Public/Documents/PVSDRA/Lab_4/Lab_4.srcs/sources_1/new/CORDIC_coprocessor.vhd:83]
+ERROR: [VRFC 10-91] rom is not declared [C:/Users/Public/Documents/PVSDRA/Lab_4/Lab_4.srcs/sources_1/new/CORDIC_coprocessor.vhd:87]
+ERROR: [VRFC 10-91] busy is not declared [C:/Users/Public/Documents/PVSDRA/Lab_4/Lab_4.srcs/sources_1/new/CORDIC_coprocessor.vhd:90]
+ERROR: [VRFC 10-91] busy is not declared [C:/Users/Public/Documents/PVSDRA/Lab_4/Lab_4.srcs/sources_1/new/CORDIC_coprocessor.vhd:78]
+ERROR: [VRFC 10-1504] unit rtl ignored due to previous errors [C:/Users/Public/Documents/PVSDRA/Lab_4/Lab_4.srcs/sources_1/new/CORDIC_coprocessor.vhd:20]
+INFO: [VRFC 10-240] VHDL file C:/Users/Public/Documents/PVSDRA/Lab_4/Lab_4.srcs/sources_1/new/CORDIC_coprocessor.vhd ignored due to errors
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-99] Step results log file:'C:/Users/Public/Documents/PVSDRA/Lab_4/Lab_4.sim/sim_1/behav/xsim/xvhdl.log'
+ERROR: [USF-XSim-62] 'compile' step failed with error(s). Please check the Tcl console output or 'C:/Users/Public/Documents/PVSDRA/Lab_4/Lab_4.sim/sim_1/behav/xsim/xvhdl.log' file for more information.
+ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
+ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+ERROR: [Common 17-69] Command failed: ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+
+relaunch_sim
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Public/Documents/PVSDRA/Lab_4/Lab_4.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'cordic_module_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/Public/Documents/PVSDRA/Lab_4/Lab_4.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj cordic_module_tb_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Public/Documents/PVSDRA/Lab_4/Lab_4.srcs/sources_1/new/CORDIC_coprocessor.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity CORDIC_coprocessor
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Public/Documents/PVSDRA/Lab_4/Lab_4.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/Public/Documents/PVSDRA/Lab_4/Lab_4.sim/sim_1/behav/xsim'
+Vivado Simulator 2018.2
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: D:/Xilinx/Vivado/2018.2/bin/unwrapped/win64.o/xelab.exe -wto fe9a41d05f22498abc16741f5405eb2f --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot cordic_module_tb_behav xil_defaultlib.cordic_module_tb -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package std.env
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_signed
+Compiling architecture rtl of entity xil_defaultlib.CORDIC_coprocessor [cordic_coprocessor_default]
+Compiling architecture cordic_module_tb_arch of entity xil_defaultlib.cordic_module_tb
+Built simulation snapshot cordic_module_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Vivado Simulator 2018.2
+Time resolution is 1 ps
+relaunch_sim
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Public/Documents/PVSDRA/Lab_4/Lab_4.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'cordic_module_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/Public/Documents/PVSDRA/Lab_4/Lab_4.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj cordic_module_tb_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Public/Documents/PVSDRA/Lab_4/Lab_4.srcs/sources_1/new/CORDIC_coprocessor.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity CORDIC_coprocessor
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Public/Documents/PVSDRA/Lab_4/Lab_4.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/Public/Documents/PVSDRA/Lab_4/Lab_4.sim/sim_1/behav/xsim'
+Vivado Simulator 2018.2
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: D:/Xilinx/Vivado/2018.2/bin/unwrapped/win64.o/xelab.exe -wto fe9a41d05f22498abc16741f5405eb2f --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot cordic_module_tb_behav xil_defaultlib.cordic_module_tb -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package std.env
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_signed
+Compiling architecture rtl of entity xil_defaultlib.CORDIC_coprocessor [cordic_coprocessor_default]
+Compiling architecture cordic_module_tb_arch of entity xil_defaultlib.cordic_module_tb
+Built simulation snapshot cordic_module_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Vivado Simulator 2018.2
+Time resolution is 1 ps
+relaunch_sim: Time (s): cpu = 00:00:00 ; elapsed = 00:00:05 . Memory (MB): peak = 1090.754 ; gain = 0.000
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+exit
+INFO: [Common 17-206] Exiting Vivado at Fri Dec  5 18:55:17 2025...
