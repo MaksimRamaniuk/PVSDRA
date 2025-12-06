@@ -6,56 +6,45 @@ entity FSM is
     Port ( clk : in STD_LOGIC;
            rst : in STD_LOGIC;
            start : in STD_LOGIC;
-           cordic_start : out STD_LOGIC;
-           busy : out STD_LOGIC;
-           mult : out STD_LOGIC;
+           count : in integer;
+           load : out STD_LOGIC;
+           calc : out STD_LOGIC;
            ready : out STD_LOGIC);
 end FSM;
 
 architecture Behavioral of FSM is
-    type state_type is (IDLE, START_CORDIC, JOB, SCALE, DONE);
+    type state_type is (IDLE, INIT, CALCULATE);
     signal state : state_type := IDLE;
-    signal count : integer range 0 to N-1 := 0;
-    signal cnt : integer;
 begin
     process(clk)
     begin
         if rising_edge(clk) then
             if rst = '1' then
                 ready <= '0';
-                mult <= '0';
-                busy <= '0';
-                count <= 0;
+                load <= '0';
+                calc <= '0';
             else
                 case state is 
                     when IDLE =>
+                        ready <= '0';
                         if start = '1' then
-                            count <= 0;
-                            busy <= '1';
-                            ready <= '0';
-                            state <= JOB;
+                            load <= '1';
+                            state <= INIT;
                         end if;
---                    when START_CORDIC => 
-                    
-                    when JOB => 
-                        if count < N then
-                            count <= count + 1;
+                        
+                    when INIT =>
+                        load <= '0';
+                        calc <= '1';
+                        state <= CALCULATE;
+                        
+                    when CALCULATE => 
+                        if count = N-1 then
+                            calc <= '0';
+                            ready <= '1';
+                            state <= IDLE;
                         else
-                            busy <= '0';
-                            state <= SCALE;
+                            state <= CALCULATE;
                         end if;
-                        
-                    when SCALE =>
-                        mult <= '1';
-                        state <= DONE;
-                        
-                    when DONE =>
-                        mult <= '0';
-                        ready <= '1';
-                        state <= IDLE;
-                        
-                    when others =>
-                        state <= IDLE;
                 end case;
             end if;
         end if;
