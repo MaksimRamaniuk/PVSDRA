@@ -75,14 +75,14 @@ begin
 --        start <= '1';
 --        wait for clk_period;
 --        start <= '0';
-        
 --        wait until ready = '1';
+
         x_in <= std_logic_vector(to_signed(64, DATA_WIDTH));
         y_in <= std_logic_vector(to_signed(64, DATA_WIDTH));
         phi  <= std_logic_vector(to_signed(47, DATA_WIDTH));
         
         for i in 0 to 31 loop
-            wait for clk_period/4;
+            wait for clk_period;
             start <= '1';
             wait for clk_period;
             start <= '0';     

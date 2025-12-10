@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
-| Date             : Sat Dec  6 19:09:59 2025
+| Date             : Wed Dec 10 23:38:18 2025
 | Host             : DESKTOP-7OC3ATR running 64-bit major release  (build 9200)
 | Command          : report_power -file CORDIC_coprocessor_power_routed.rpt -pb CORDIC_coprocessor_power_summary_routed.pb -rpx CORDIC_coprocessor_power_routed.rpx
 | Design           : CORDIC_coprocessor
@@ -30,10 +30,10 @@ Table of Contents
 ----------
 
 +--------------------------+----------------------------------+
-| Total On-Chip Power (W)  | 20.422 (Junction temp exceeded!) |
+| Total On-Chip Power (W)  | 20.911 (Junction temp exceeded!) |
 | Design Power Budget (W)  | Unspecified*                     |
 | Power Budget Margin (W)  | NA                               |
-| Dynamic (W)              | 19.674                           |
+| Dynamic (W)              | 20.164                           |
 | Device Static (W)        | 0.747                            |
 | Effective TJA (C/W)      | 11.5                             |
 | Max Ambient (C)          | 0.0                              |
@@ -52,16 +52,16 @@ Table of Contents
 +----------------+-----------+----------+-----------+-----------------+
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
-| Slice Logic    |     1.794 |      303 |       --- |             --- |
-|   LUT as Logic |     1.621 |      146 |     17600 |            0.83 |
-|   CARRY4       |     0.142 |       25 |      4400 |            0.57 |
-|   Register     |     0.025 |       79 |     35200 |            0.22 |
+| Slice Logic    |     1.785 |      285 |       --- |             --- |
+|   LUT as Logic |     1.612 |      141 |     17600 |            0.80 |
+|   CARRY4       |     0.143 |       25 |      4400 |            0.57 |
+|   Register     |     0.025 |       72 |     35200 |            0.20 |
 |   BUFG         |     0.006 |        1 |        32 |            3.13 |
-|   Others       |     0.000 |       10 |       --- |             --- |
-| Signals        |     1.763 |      253 |       --- |             --- |
-| I/O            |    16.117 |       49 |       100 |           49.00 |
+|   Others       |     0.000 |        6 |       --- |             --- |
+| Signals        |     1.702 |      236 |       --- |             --- |
+| I/O            |    16.677 |       49 |       100 |           49.00 |
 | Static Power   |     0.747 |          |           |                 |
-| Total          |    20.422 |          |           |                 |
+| Total          |    20.911 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -71,11 +71,11 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     3.802 |       3.673 |      0.129 |
-| Vccaux    |       1.800 |     1.350 |       1.310 |      0.040 |
+| Vccint    |       1.000 |     3.732 |       3.603 |      0.129 |
+| Vccaux    |       1.800 |     1.396 |       1.356 |      0.040 |
 | Vcco33    |       3.300 |     0.000 |       0.000 |      0.000 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
-| Vcco18    |       1.800 |     7.581 |       7.580 |      0.001 |
+| Vcco18    |       1.800 |     7.846 |       7.845 |      0.001 |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |
 | Vcco135   |       1.350 |     0.000 |       0.000 |      0.000 |
 | Vcco12    |       1.200 |     0.000 |       0.000 |      0.000 |
@@ -145,9 +145,8 @@ Table of Contents
 +--------------------+-----------+
 | Name               | Power (W) |
 +--------------------+-----------+
-| CORDIC_coprocessor |    19.674 |
-|   atan             |     0.226 |
-|   control_device   |     0.258 |
+| CORDIC_coprocessor |    20.164 |
+|   control_device   |     0.263 |
 +--------------------+-----------+
 
 

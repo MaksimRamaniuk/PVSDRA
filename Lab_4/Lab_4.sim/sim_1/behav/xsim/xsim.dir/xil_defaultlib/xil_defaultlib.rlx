@@ -2,7 +2,8 @@
 2018.2
 Jun 14 2018
 20:41:02
-C:/Users/Public/Documents/PVSDRA/Lab_4/Lab_4.srcs/sim_1/new/cordic_module_tb.vhd,1765211863,vhdl,,,,cordic_module_tb,,,,,,,,
-C:/Users/Public/Documents/PVSDRA/Lab_4/Lab_4.srcs/sources_1/new/CORDIC_coprocessor.vhd,1765037553,vhdl,C:/Users/Public/Documents/PVSDRA/Lab_4/Lab_4.srcs/sim_1/new/cordic_module_tb.vhd,,,cordic_coprocessor,,,,,,,,
+C:/Users/Public/Documents/PVSDRA/Lab_4/Lab_4.srcs/sim_1/new/cordic_module_tb.vhd,1765400226,vhdl,,,,cordic_module_tb,,,,,,,,
+C:/Users/Public/Documents/PVSDRA/Lab_4/Lab_4.srcs/sources_1/new/CORDIC_coprocessor.vhd,1765399905,vhdl,C:/Users/Public/Documents/PVSDRA/Lab_4/Lab_4.srcs/sim_1/new/cordic_module_tb.vhd,,,cordic_coprocessor,,,,,,,,
+C:/Users/Public/Documents/PVSDRA/Lab_4/Lab_4.srcs/sources_1/new/Cartesian2Polar.vhd,1765401166,vhdl,C:/Users/Public/Documents/PVSDRA/Lab_4/Lab_4.srcs/sources_1/new/CORDIC_coprocessor.vhd,,,cartesian2polar,,,,,,,,
 C:/Users/Public/Documents/PVSDRA/Lab_4/Lab_4.srcs/sources_1/new/FSM.vhd,1765037194,vhdl,C:/Users/Public/Documents/PVSDRA/Lab_4/Lab_4.srcs/sources_1/new/CORDIC_coprocessor.vhd,,,fsm,,,,,,,,
-C:/Users/Public/Documents/PVSDRA/Lab_4/Lab_4.srcs/sources_1/new/ROM.vhd,1765037577,vhdl,C:/Users/Public/Documents/PVSDRA/Lab_4/Lab_4.srcs/sources_1/new/CORDIC_coprocessor.vhd,,,rom,,,,,,,,
+C:/Users/Public/Documents/PVSDRA/Lab_4/Lab_4.srcs/sources_1/new/ROM.vhd,1765401615,vhdl,C:/Users/Public/Documents/PVSDRA/Lab_4/Lab_4.srcs/sources_1/new/CORDIC_coprocessor.vhd,,,rom,,,,,,,,

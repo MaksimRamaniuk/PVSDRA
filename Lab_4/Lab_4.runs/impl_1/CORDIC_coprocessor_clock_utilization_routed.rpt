@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
-| Date         : Sat Dec  6 19:10:00 2025
+| Date         : Wed Dec 10 23:38:19 2025
 | Host         : DESKTOP-7OC3ATR running 64-bit major release  (build 9200)
 | Command      : report_clock_utilization -file CORDIC_coprocessor_clock_utilization_routed.rpt
 | Design       : CORDIC_coprocessor
@@ -68,8 +68,8 @@ Table of Contents
 +----------+-----------------+------------+------------------+--------------+-------------+-----------------+--------------+-------+----------------------------+---------------------+
 | Local Id | Driver Type/Pin | Constraint | Site/BEL         | Clock Region | Clock Loads | Non-Clock Loads | Clock Period | Clock | Driver Pin                 | Net                 |
 +----------+-----------------+------------+------------------+--------------+-------------+-----------------+--------------+-------+----------------------------+---------------------||
-| 0        | FDRE/Q          | None       | SLICE_X41Y21/BFF | X1Y0         |          18 |               2 |              |       | control_device/ready_reg/Q | control_device/E[0] - Static -
-| 1        | FDRE/Q          | None       | SLICE_X41Y21/AFF | X1Y0         |          18 |               3 |              |       | control_device/calc_reg/Q  | control_device/busy - Static -
+| 0        | FDRE/Q          | None       | SLICE_X39Y22/DFF | X1Y0         |          18 |               2 |              |       | control_device/ready_reg/Q | control_device/E[0] - Static -
+| 1        | FDRE/Q          | None       | SLICE_X39Y22/BFF | X1Y0         |          18 |               3 |              |       | control_device/calc_reg/Q  | control_device/busy - Static -
 +----------+-----------------+------------+------------------+--------------+-------------+-----------------+--------------+-------+----------------------------+---------------------||
 * Local Clocks in this context represents only clocks driven by non-global buffers
 ** Clock Loads column represents the clock pin loads (pin count)
@@ -85,7 +85,7 @@ Table of Contents
 | Clock Region Name | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail |
 +-------------------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+
 | X0Y0              |    0 |    12 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |  1100 |    0 |   400 |    0 |    20 |    0 |    10 |    0 |    20 |
-| X1Y0              |    1 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 |   36 |  1100 |    8 |   350 |    0 |    40 |    0 |    20 |    0 |    20 |
+| X1Y0              |    1 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 |   36 |  1100 |   22 |   350 |    0 |    40 |    0 |    20 |    0 |    20 |
 | X0Y1              |    0 |    12 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |  1100 |    0 |   400 |    0 |    20 |    0 |    10 |    0 |    20 |
 | X1Y1              |    0 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 |    0 |  1100 |    0 |   350 |    0 |    40 |    0 |    20 |    0 |    20 |
 +-------------------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+

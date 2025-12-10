@@ -29,10 +29,12 @@ disp(phi_q.');
 x = 0.5;
 y = 0.5;
 fprintf('Start point: (%.6f, %.6f)\n', x, y);
-
-for i = 1:2
-    R = [cos(phi(i)), -sin(phi(i));
-         sin(phi(i)),  cos(phi(i))];
+    r = sqrt(x^2+y^2);
+    theta = atan(y/x);
+    fprintf('Polar coordinates: (%.6f, %.6f)\n', r, theta);
+for i = 1:6
+    R = [cos(phi(1)), -sin(phi(1));
+         sin(phi(1)),  cos(phi(1))];
     p = [x; y];
 
     p_rot = R * p;
@@ -40,5 +42,8 @@ for i = 1:2
     fprintf('New point: (%.6f, %.6f)\n', p_rot(1), p_rot(2));
     x = p_rot(1);
     y = p_rot(2);
+    r = sqrt(x^2+y^2);
+    theta = atan(y/x);
+%     fprintf('Polar coordinates: (%.6f, %.6f)\n', r, theta);
 end
 
