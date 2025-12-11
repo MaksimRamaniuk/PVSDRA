@@ -25,10 +25,13 @@ architecture rtl of CORDIC_coprocessor is
     signal x_shift, y_shift: std_logic_vector(DATA_WIDTH-1 downto 0);
     signal busy, load, done : std_logic := '0';
     signal arctan : std_logic_vector(DATA_WIDTH-1 downto 0);    
+    signal x_cart, y_cart: std_logic_vector(DATA_WIDTH-1 downto 0);
+    signal r, theta: std_logic_vector(DATA_WIDTH-1 downto 0);
+    signal start_pol,complete : std_logic := '0';
 begin
     control_device: entity work.FSM
     generic map (N => N)
-    port map(clk => clk, rst => rst, start => start, count => count, load => load, calc => busy, ready => done);
+    port map(clk => clk, rst => rst, start => start, count => count, load => load, calc => busy, done => done, ready => ready, start_pol => start_pol, complete => complete);
     
     atan: entity work.ROM
     generic map (DATA_WIDTH => DATA_WIDTH)
@@ -102,14 +105,22 @@ begin
         if rst = '1' then
             x_out <= (others => '0');
             y_out <= (others => '0');
+            x_cart <= (others => '0');
+            y_cart <= (others => '0');
         elsif done = '1' then
             x_scale := x * K;
             y_scale := y * K;
             
             x_out <= x_scale(2*DATA_WIDTH-3 downto DATA_WIDTH-2);
             y_out <= y_scale(2*DATA_WIDTH-3 downto DATA_WIDTH-2);
+            x_cart <= x_scale(2*DATA_WIDTH-3 downto DATA_WIDTH-2);
+            y_cart <= y_scale(2*DATA_WIDTH-3 downto DATA_WIDTH-2);
         end if;
     end process;
     
-    ready <= done;
+    to_polar : entity work.Cartesian_to_Polar
+    generic map (DATA_WIDTH => DATA_WIDTH)
+    port map(clk => clk, rst => rst, start => start_pol, x_in => x_cart, y_in => y_cart, r_out => r, theta_out => theta, ready => complete);    
+    
+--    ready <= done;
 end rtl;

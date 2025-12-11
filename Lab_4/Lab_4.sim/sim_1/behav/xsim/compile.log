@@ -1,5 +1,5 @@
-INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Public/Documents/PVSDRA/Lab_4/Lab_4.srcs/sources_1/new/ROM.vhd" into library xil_defaultlib
-INFO: [VRFC 10-307] analyzing entity ROM
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Public/Documents/PVSDRA/Lab_4/Lab_4.srcs/sources_1/new/Cartesian_to_Polar.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity Cartesian_to_Polar
 INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Public/Documents/PVSDRA/Lab_4/Lab_4.srcs/sources_1/new/CORDIC_coprocessor.vhd" into library xil_defaultlib
 INFO: [VRFC 10-307] analyzing entity CORDIC_coprocessor
 INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Public/Documents/PVSDRA/Lab_4/Lab_4.srcs/sim_1/new/cordic_module_tb.vhd" into library xil_defaultlib

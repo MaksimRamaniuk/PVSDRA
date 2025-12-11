@@ -2,110 +2,239 @@
 # Vivado v2018.2 (64-bit)
 # SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
 # IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
-# Start of session at: Wed Dec 10 23:21:14 2025
-# Process ID: 7496
+# Start of session at: Thu Dec 11 08:07:20 2025
+# Process ID: 5092
 # Current directory: C:/Users/Public/Documents/PVSDRA/Lab_4
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent3628 C:\Users\Public\Documents\PVSDRA\Lab_4\Lab_4.xpr
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent7160 C:\Users\Public\Documents\PVSDRA\Lab_4\Lab_4.xpr
 # Log file: C:/Users/Public/Documents/PVSDRA/Lab_4/vivado.log
 # Journal file: C:/Users/Public/Documents/PVSDRA/Lab_4\vivado.jou
 #-----------------------------------------------------------
 start_gui
 open_project C:/Users/Public/Documents/PVSDRA/Lab_4/Lab_4.xpr
+r
 update_compile_order -fileset sources_1
-reset_run synth_1
-launch_runs impl_1 -jobs 6
-wait_on_run impl_1
-open_run impl_1
-close_design
-close [ open C:/Users/Public/Documents/PVSDRA/Lab_4/Lab_4.srcs/sources_1/new/Cartesian2Polar.vhd w ]
-add_files C:/Users/Public/Documents/PVSDRA/Lab_4/Lab_4.srcs/sources_1/new/Cartesian2Polar.vhd
+export_ip_user_files -of_objects  [get_files C:/Users/Public/Documents/PVSDRA/Lab_4/Lab_4.srcs/sources_1/new/Cartesian2Polar.vhd] -no_script -reset -force -quiet
+remove_files  C:/Users/Public/Documents/PVSDRA/Lab_4/Lab_4.srcs/sources_1/new/Cartesian2Polar.vhd
+add_files -norecurse C:/Users/Public/Documents/PVSDRA/Lab_4/Lab_4.srcs/sources_1/new/Cartesian_to_Polar.vhd
 update_compile_order -fileset sources_1
-launch_simulation
-open_wave_config C:/Users/Public/Documents/PVSDRA/Lab_4/cordic_module_tb_behav.wcfg
-source cordic_module_tb.tcl
-relaunch_sim
-relaunch_sim
-current_wave_config {cordic_module_tb_behav.wcfg}
-add_wave {{/cordic_module_tb/uut/r_out_signal}} {{/cordic_module_tb/uut/theta_out_signal}} 
-restart
-run 10 us
-update_compile_order -fileset sources_1
-relaunch_sim
-relaunch_sim
-relaunch_sim
-relaunch_sim
-run 10 us
-relaunch_sim
-relaunch_sim
-update_compile_order -fileset sim_1
-relaunch_sim
-update_compile_order -fileset sim_1
-run 10 us
-relaunch_sim
-close_sim
 # Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
 set_property source_mgmt_mode None [current_project]
-set_property top Cartesian2Polar [get_filesets sim_1]
+set_property top Cartesian_to_Polar [get_filesets sim_1]
 set_property top_lib xil_defaultlib [get_filesets sim_1]
 # Re-enabling previously disabled source management mode.
 set_property source_mgmt_mode All [current_project]
-update_compile_order -fileset sim_1
 launch_simulation
 open_wave_config C:/Users/Public/Documents/PVSDRA/Lab_4/cordic_module_tb_behav.wcfg
-source Cartesian2Polar.tcl
+source Cartesian_to_Polar.tcl
+update_compile_order -fileset sim_1
 current_wave_config {cordic_module_tb_behav.wcfg}
-add_wave {{/Cartesian2Polar/clk}} {{/Cartesian2Polar/rst}} {{/Cartesian2Polar/start}} {{/Cartesian2Polar/x_in}} {{/Cartesian2Polar/y_in}} {{/Cartesian2Polar/r_out}} {{/Cartesian2Polar/theta_out}} {{/Cartesian2Polar/ready}} {{/Cartesian2Polar/x}} {{/Cartesian2Polar/y}} {{/Cartesian2Polar/angle}} {{/Cartesian2Polar/busy}} {{/Cartesian2Polar/count}} {{/Cartesian2Polar/DATA_WIDTH}} {{/Cartesian2Polar/N}} {{/Cartesian2Polar/arctan_rom}} 
-add_force {/Cartesian2Polar/clk} -radix hex {0 0ns} {1 50000ps} -repeat_every 100000ps
-add_force {/Cartesian2Polar/start} -radix hex {1 0ns} -cancel_after 200ns
-add_force {/Cartesian2Polar/x_in} -radix hex {64 0ns}
-add_force {/Cartesian2Polar/x_in} -radix dec {64 0ns}
-add_force {/Cartesian2Polar/y_in} -radix hex {64 0ns}
-add_force {/Cartesian2Polar/x_in} -radix hex {64 0ns}
+add_wave {{/Cartesian_to_Polar/clk}} {{/Cartesian_to_Polar/rst}} {{/Cartesian_to_Polar/start}} {{/Cartesian_to_Polar/x_in}} {{/Cartesian_to_Polar/y_in}} {{/Cartesian_to_Polar/r_out}} {{/Cartesian_to_Polar/theta_out}} 
+restart
+add_force {/Cartesian_to_Polar/clk} -radix hex {0 0ns} {1 50000ps} -repeat_every 100000ps
+add_force {/Cartesian_to_Polar/start} -radix hex {1 0ns} -cancel_after 200ns
+add_force {/Cartesian_to_Polar/x_in} -radix hex {40 0ns}
+add_force {/Cartesian_to_Polar/y_in} -radix hex {40 0ns}
+run 10 us
+run 10 us
+current_wave_config {cordic_module_tb_behav.wcfg}
+add_wave {{/Cartesian_to_Polar/ready}} 
 restart
 run 10 us
+current_wave_config {cordic_module_tb_behav.wcfg}
+add_wave {{/Cartesian_to_Polar/count}} 
 restart
-add_force {/Cartesian2Polar/clk} -radix hex {1 0ns} {0 50000ps} -repeat_every 100000ps
-add_force {/Cartesian2Polar/start} -radix hex {1 0ns} -cancel_after 200ns
-add_force {/Cartesian2Polar/x_in} -radix dec {64 0ns}
-add_force {/Cartesian2Polar/y_in} -radix dec {64 0ns}
-run 10 us
-restart
-run 10 us
-restart
-add_force {/Cartesian2Polar/x_in} -radix dec {-58 0ns}
-add_force {/Cartesian2Polar/y_in} -radix dec {70 0ns}
-run 10 us
-restart
-add_force {/Cartesian2Polar/y_in} -radix dec {64 0ns}
-add_force {/Cartesian2Polar/x_in} -radix hex {40 0ns}
-run 10 us
-restart
-add_force {/Cartesian2Polar/x_in} -radix hex {1 0ns}
-add_force {/Cartesian2Polar/x_in} -radix dec {128 0ns}
-add_force {/Cartesian2Polar/y_in} -radix hex {0 0ns}
 run 10 us
 relaunch_sim
 restart
-add_force {/Cartesian2Polar/clk} -radix hex {0 0ns} {1 50000ps} -repeat_every 100000ps
-add_force {/Cartesian2Polar/start} -radix hex {1 0ns} -cancel_after 200ns
-add_force {/Cartesian2Polar/y_in} -radix hex {0 0ns}
-add_force {/Cartesian2Polar/x_in} -radix hex {80 0ns}
+add_force {/Cartesian_to_Polar/clk} -radix hex {0 0ns} {1 50000ps} -repeat_every 100000ps
+add_force {/Cartesian_to_Polar/start} -radix hex {1 0ns} -cancel_after 200ns
+add_force {/Cartesian_to_Polar/x_in} -radix hex {40 0ns}
+add_force {/Cartesian_to_Polar/y_in} -radix hex {40 0ns}
 run 10 us
-add_force {/Cartesian2Polar/x_in} -radix hex {40 0ns}
-add_force {/Cartesian2Polar/y_in} -radix hex {40 0ns}
+current_wave_config {cordic_module_tb_behav.wcfg}
+add_wave {{/Cartesian_to_Polar/arctan}} 
+restart
+run 10 us
+relaunch_sim
+restart
+add_force {/Cartesian_to_Polar/clk} -radix hex {0 0ns} {1 50000ps} -repeat_every 100000ps
+add_force {/Cartesian_to_Polar/rst} -radix hex {1 0ns} -cancel_after 200ns
+add_force {/Cartesian_to_Polar/x_in} -radix hex {40 0ns}
+add_force {/Cartesian_to_Polar/y_in} -radix hex {40 0ns}
+run 10 us
+run 10 us
+run 10 us
+restart
+add_force {/Cartesian_to_Polar/rst} -radix hex {0 0ns}
+add_force {/Cartesian_to_Polar/start} -radix hex {1 0ns} -cancel_after 200ns
+run 10 us
+relaunch_sim
+restart
+add_force {/Cartesian_to_Polar/clk} -radix hex {0 0ns} {1 50000ps} -repeat_every 100000ps
+add_force {/Cartesian_to_Polar/start} -radix hex {1 0ns} -cancel_after 200ns
+add_force {/Cartesian_to_Polar/x_in} -radix hex {40 0ns}
+add_force {/Cartesian_to_Polar/y_in} -radix hex {40 0ns}
+run 10 us
+relaunch_sim
+restart
+add_force {/Cartesian_to_Polar/clk} -radix hex {0 0ns} {1 50000ps} -repeat_every 100000ps
+add_force {/Cartesian_to_Polar/start} -radix hex {1 0ns} -cancel_after 200ns
+add_force {/Cartesian_to_Polar/x_in} -radix hex {40 0ns}
+add_force {/Cartesian_to_Polar/y_in} -radix hex {40 0ns}
+run 10 us
+relaunch_sim
+restart
+add_force {/Cartesian_to_Polar/clk} -radix hex {0 0ns} {1 50000ps} -repeat_every 100000ps
+add_force {/Cartesian_to_Polar/start} -radix hex {1 0ns} -cancel_after 200ns
+add_force {/Cartesian_to_Polar/x_in} -radix hex {40 0ns}
+add_force {/Cartesian_to_Polar/y_in} -radix hex {40 0ns}
+run 10 us
+relaunch_sim
+restart
+add_force {/Cartesian_to_Polar/clk} -radix hex {0 0ns} {1 50000ps} -repeat_every 100000ps
+add_force {/Cartesian_to_Polar/start} -radix hex {1 0ns} -cancel_after 200ns
+add_force {/Cartesian_to_Polar/x_in} -radix hex {40 0ns}
+add_force {/Cartesian_to_Polar/y_in} -radix hex {40 0ns}
+run 10 us
+relaunch_sim
+restart
+add_force {/Cartesian_to_Polar/clk} -radix hex {0 0ns} {1 50000ps} -repeat_every 100000ps
+add_force {/Cartesian_to_Polar/start} -radix hex {1 0ns} -cancel_after 200
+add_force {/Cartesian_to_Polar/x_in} -radix hex {40 0ns}
+add_force {/Cartesian_to_Polar/y_in} -radix hex {40 0ns}
+run 10 us
+relaunch_sim
+restart
+add_force {/Cartesian_to_Polar/clk} -radix hex {0 0ns} {1 50000ps} -repeat_every 100000ps
+add_force {/Cartesian_to_Polar/start} -radix hex {1 0ns} -cancel_after 200ns
+add_force {/Cartesian_to_Polar/x_in} -radix hex {40 0ns}
+add_force {/Cartesian_to_Polar/y_in} -radix hex {40 0ns}
+run 10 us
+relaunch_sim
+restart
+add_force {/Cartesian_to_Polar/clk} -radix hex {0 0ns} {1 50000ps} -repeat_every 100000ps
+add_force {/Cartesian_to_Polar/start} -radix hex {1 0ns} -cancel_after 200
+add_force {/Cartesian_to_Polar/x_in} -radix hex {40 0ns}
+add_force {/Cartesian_to_Polar/y_in} -radix hex {40 0ns}
+run 10 us
+restart
+add_force {/Cartesian_to_Polar/x_in} -radix hex {80 0ns}
+add_force {/Cartesian_to_Polar/y_in} -radix hex {0 0ns}
+run 10 us
+restart
+add_force {/Cartesian_to_Polar/y_in} -radix hex {40 0ns}
+run 10 us
+restart
+add_force {/Cartesian_to_Polar/y_in} -radix hex {80 0ns}
+run 10 us
+relaunch_sim
+restart
+add_force {/Cartesian_to_Polar/clk} -radix hex {0 0ns} {1 50000ps} -repeat_every 100000ps
+add_force {/Cartesian_to_Polar/start} -radix hex {200 0ns}
+add_force {/Cartesian_to_Polar/start} -radix hex {1 0ns} -cancel_after 200
+add_force {/Cartesian_to_Polar/x_in} -radix hex {80 0ns}
+add_force {/Cartesian_to_Polar/y_in} -radix hex {80 0ns}
+run 10 us
+relaunch_sim
+restart
+add_force {/Cartesian_to_Polar/clk} -radix hex {0 0ns} {1 50000ps} -repeat_every 100000ps
+add_force {/Cartesian_to_Polar/start} -radix hex {1 0ns} -cancel_after 200
+add_force {/Cartesian_to_Polar/x_in} -radix hex {80 0ns}
+add_force {/Cartesian_to_Polar/y_in} -radix hex {80 0ns}
+run 10 us
+restart
+add_force {/Cartesian_to_Polar/x_in} -radix dec {96 0ns}
+add_force {/Cartesian_to_Polar/y_in} -radix hex {60 0ns}
+run 10 us
+add_force {/Cartesian_to_Polar/x_in} -radix hex {80 0ns}
+add_force {/Cartesian_to_Polar/y_in} -radix hex {0 0ns}
 restart
 run 10 us
 restart
-add_force {/Cartesian2Polar/y_in} -radix hex {40 0ns}
-add_force {/Cartesian2Polar/x_in} -radix hex {40 0ns}
+add_force {/Cartesian_to_Polar/x_in} -radix hex {80 0ns}
+add_force {/Cartesian_to_Polar/y_in} -radix hex {0 0ns}
 run 10 us
 restart
-add_force {/Cartesian2Polar/x_in} -radix hex {26 0ns}
-add_force {/Cartesian2Polar/y_in} -radix hex {26 0ns}
+add_force {/Cartesian_to_Polar/x_in} -radix hex {40 0ns}
+add_force {/Cartesian_to_Polar/y_in} -radix hex {26 0ns}
 run 10 us
 restart
-add_force {/Cartesian2Polar/x_in} -radix hex {40 0ns}
-add_force {/Cartesian2Polar/y_in} -radix hex {80 0ns}
+add_force {/Cartesian_to_Polar/y_in} -radix dec {26 0ns}
+run 10 us
+restart
+add_force {/Cartesian_to_Polar/x_in} -radix dec {115 0ns}
+add_force {/Cartesian_to_Polar/y_in} -radix dec {13 0ns}
+run 10 us
+relaunch_sim
+add_force {/Cartesian_to_Polar/clk} -radix hex {0 0ns} {1 50000ps} -repeat_every 100000ps
+add_force {/Cartesian_to_Polar/start} -radix hex {1 0ns} -cancel_after 200
+add_force {/Cartesian_to_Polar/x_in} -radix hex {73 0ns}
+add_force {/Cartesian_to_Polar/y_in} -radix hex {f 0ns}
+add_force {/Cartesian_to_Polar/y_in} -radix hex {d 0ns}
+run 10 us
+relaunch_sim
+relaunch_sim
+restart
+add_force {/Cartesian_to_Polar/x_in} -radix hex {73 0ns}
+add_force {/Cartesian_to_Polar/y_in} -radix hex {d 0ns}
+add_force {/Cartesian_to_Polar/clk} -radix hex {0 0ns} {1 50000ps} -repeat_every 100000ps
+add_force {/Cartesian_to_Polar/start} -radix hex {1 0ns} -cancel_after 200ns
+run 10 us
+relaunch_sim
+add_force {/Cartesian_to_Polar/clk} -radix hex {0 0ns} {1 50000ps} -repeat_every 100000ps
+add_force {/Cartesian_to_Polar/start} -radix hex {1 0ns} -cancel_after 200
+add_force {/Cartesian_to_Polar/x_in} -radix hex {73 0ns}
+add_force {/Cartesian_to_Polar/y_in} -radix hex {d 0ns}
+run 10 us
+restart
+add_force {/Cartesian_to_Polar/clk} -radix hex {0 0ns} {1 50000ps} -repeat_every 100000ps
+add_force {/Cartesian_to_Polar/start} -radix hex {1 0ns} -cancel_after 200ns
+add_force {/Cartesian_to_Polar/x_in} -radix hex {40 0ns}
+add_force {/Cartesian_to_Polar/y_in} -radix hex {40 0ns}
+run 10 us
+restart
+add_force {/Cartesian_to_Polar/x_in} -radix hex {80 0ns}
+add_force {/Cartesian_to_Polar/y_in} -radix hex {0 0ns}
+run 10 us
+relaunch_sim
+restart
+add_force {/Cartesian_to_Polar/clk} -radix hex {0 0ns} {1 50000ps} -repeat_every 100000ps
+add_force {/Cartesian_to_Polar/start} -radix hex {1 0ns} -cancel_after 200
+add_force {/Cartesian_to_Polar/x_in} -radix hex {80 0ns}
+add_force {/Cartesian_to_Polar/y_in} -radix hex {0 0ns}
+run 10 us
+relaunch_sim
+relaunch_sim
+restart
+add_force {/Cartesian_to_Polar/clk} -radix hex {0 0ns} {1 50000ps} -repeat_every 100000ps
+add_force {/Cartesian_to_Polar/start} -radix hex {1 0ns} -cancel_after 200
+add_force {/Cartesian_to_Polar/x_in} -radix hex {80 0ns}
+add_force {/Cartesian_to_Polar/y_in} -radix hex {0 0ns}
+run 10 us
+restart
+add_force {/Cartesian_to_Polar/x_in} -radix hex {40 0ns}
+add_force {/Cartesian_to_Polar/y_in} -radix hex {40 0ns}
+run 10 us
+relaunch_sim
+restart
+add_force {/Cartesian_to_Polar/clk} -radix hex {0 0ns} {1 50000ps} -repeat_every 100000ps
+add_force {/Cartesian_to_Polar/start} -radix hex {1 0ns} -cancel_after 200
+add_force {/Cartesian_to_Polar/x_in} -radix hex {80 0ns}
+add_force {/Cartesian_to_Polar/y_in} -radix hex {0 0ns}
+run 10 us
+relaunch_sim
+restart
+add_force {/Cartesian_to_Polar/clk} -radix hex {0 0ns} {1 50000ps} -repeat_every 100000ps
+add_force {/Cartesian_to_Polar/start} -radix hex {1 0ns} -cancel_after 200
+add_force {/Cartesian_to_Polar/x_in} -radix hex {80 0ns}
+add_force {/Cartesian_to_Polar/y_in} -radix hex {0 0ns}
+run 10 us
+relaunch_sim
+restart
+add_force {/Cartesian_to_Polar/clk} -radix hex {0 0ns} {1 50000ps} -repeat_every 100000ps
+add_force {/Cartesian_to_Polar/start} -radix hex {1 0ns} -cancel_after 200
+add_force {/Cartesian_to_Polar/x_in} -radix hex {40 0ns}
+add_force {/Cartesian_to_Polar/y_in} -radix hex {40 0ns}
 run 10 us
 close_sim
 # Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
@@ -118,7 +247,51 @@ update_compile_order -fileset sim_1
 launch_simulation
 open_wave_config C:/Users/Public/Documents/PVSDRA/Lab_4/cordic_module_tb_behav.wcfg
 source cordic_module_tb.tcl
+close_sim
+update_compile_order -fileset sources_1
+launch_simulation
+open_wave_config C:/Users/Public/Documents/PVSDRA/Lab_4/cordic_module_tb_behav.wcfg
+source cordic_module_tb.tcl
 relaunch_sim
 relaunch_sim
 run 10 us
+current_wave_config {cordic_module_tb_behav.wcfg}
+log_wave {/cordic_module_tb/uut/r} {/cordic_module_tb/uut/theta} 
+current_wave_config {cordic_module_tb_behav.wcfg}
+add_wave {{/cordic_module_tb/uut/r}} {{/cordic_module_tb/uut/theta}} 
+restart
+run 10 us
+current_wave_config {cordic_module_tb_behav.wcfg}
+add_wave {{/cordic_module_tb/uut/complete}} 
+restart
+run 10 us
+relaunch_sim
+run 10 us
+relaunch_sim
+relaunch_sim
+relaunch_sim
+run 10 us
+current_wave_config {cordic_module_tb_behav.wcfg}
+add_wave {{/cordic_module_tb/count}} 
+restart
+run 10 us
+relaunch_sim
+run 10 us
+current_wave_config {cordic_module_tb_behav.wcfg}
+add_wave {{/cordic_module_tb/uut/to_polar/y}} 
+current_wave_config {cordic_module_tb_behav.wcfg}
+add_wave {{/cordic_module_tb/uut/to_polar/count}} 
+current_wave_config {cordic_module_tb_behav.wcfg}
+add_wave {{/cordic_module_tb/uut/to_polar/arctan}} 
+restart
+run 10 us
+current_wave_config {cordic_module_tb_behav.wcfg}
+add_wave {{/cordic_module_tb/uut/to_polar/angle}} 
+restart
+run 10 us
+relaunch_sim
+relaunch_sim
+relaunch_sim
+run 10 us
+save_wave_config {C:/Users/Public/Documents/PVSDRA/Lab_4/cordic_module_tb_behav.wcfg}
 close_sim

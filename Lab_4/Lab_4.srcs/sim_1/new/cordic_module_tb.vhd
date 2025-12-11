@@ -15,6 +15,7 @@ architecture Behavioral of cordic_module_tb is
     signal rst   : STD_LOGIC := '0';
     signal start : STD_LOGIC := '0';
     signal ready : STD_LOGIC;
+    signal count : integer;
 
     signal phi   : STD_LOGIC_VECTOR(DATA_WIDTH-1 downto 0) := (others => '0');
     signal x_in  : STD_LOGIC_VECTOR(DATA_WIDTH-1 downto 0) := (others => '0');
@@ -81,12 +82,13 @@ begin
         y_in <= std_logic_vector(to_signed(64, DATA_WIDTH));
         phi  <= std_logic_vector(to_signed(47, DATA_WIDTH));
         
-        for i in 0 to 31 loop
+        for i in 0 to 15 loop
             wait for clk_period;
             start <= '1';
             wait for clk_period;
             start <= '0';     
             wait until ready = '1'; 
+            count <= i;
             x_in <= x_out;
             y_in <= y_out;  
         end loop;
